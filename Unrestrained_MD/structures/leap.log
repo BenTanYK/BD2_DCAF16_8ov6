@@ -1,0 +1,5895 @@
+log started: Thu Aug 14 16:40:54 2025
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff19SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "XC"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> set default cmap on
+>> parm19 = loadamberparams parm19.dat
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/parm19.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA + ff19SB
+(UNKNOWN ATOM TYPE: Zn)
+(UNKNOWN ATOM TYPE: EP)
+>> frcmod19SB = loadamberparams frcmod.ff19SB
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ff19SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff19SB AA-specific backbone CMAPs for protein 07/25/2019
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino19.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/amino19.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+> source leaprc.water.tip3p
+----- Source: /home/btan/miniconda3/envs/openbiosim/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /home/btan/miniconda3/envs/openbiosim/dat/leap/cmd/leaprc.water.tip3p done
+>> #
+>> #       Load water and ions for TIP3P + Li/Merz monovalent ions 
+>> #       + Joung-Chetham monovalent ions
+>> #       + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #
+>> #       Note: the Li/Merz monovalent set is loaded only to get Tl+,
+>> #          Cu+, Ag+ NH4+, H3O+.  Since we load Joung-Cheatham second,
+>> #          the alkali halide parameters come from the Joung-Cheatham set
+>> #
+>> addAtomTypes {
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "NH4+"  "N"  "sp3" }
+>>     { "H3O+"  "O"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> loadAmberParams frcmod.tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+>> loadAmberParams frcmod.ions1lm_126_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+>> loadAmberParams frcmod.ionsjc_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+>> 
+> 
+> addAtomTypes { { "ZN" "Zn" "sp3" } { "S3" "S" "sp3" } } # Add atom types for the ZAFF metal center
+> loadamberparams frcmod.ions1lm_126_tip3p #Load the Li/Merz 12-6 parameter set for monovalent ions
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+> loadamberprep ZAFF.prep #Load ZAFF prep file
+Loading Prep file: ./ZAFF.prep
+(UNKNOWN ATOM TYPE: S1)
+(UNKNOWN ATOM TYPE: S2)
+(UNKNOWN ATOM TYPE: N1)
+(UNKNOWN ATOM TYPE: S4)
+(UNKNOWN ATOM TYPE: S5)
+(UNKNOWN ATOM TYPE: N4)
+(UNKNOWN ATOM TYPE: D1)
+(UNKNOWN ATOM TYPE: E1)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: E2)
+(UNKNOWN ATOM TYPE: NR)
+(UNKNOWN ATOM TYPE: N5)
+(UNKNOWN ATOM TYPE: N6)
+(UNKNOWN ATOM TYPE: N7)
+(UNKNOWN ATOM TYPE: O1)
+(UNKNOWN ATOM TYPE: N8)
+(UNKNOWN ATOM TYPE: N9)
+(UNKNOWN ATOM TYPE: N0)
+(UNKNOWN ATOM TYPE: O3)
+(UNKNOWN ATOM TYPE: O4)
+Loaded UNIT: AP1
+Loaded UNIT: AP2
+Loaded UNIT: CY1
+Loaded UNIT: CY2
+Loaded UNIT: CY3
+Loaded UNIT: CY4
+Loaded UNIT: CY5
+Loaded UNIT: HD1
+Loaded UNIT: HD2
+Loaded UNIT: HD3
+Loaded UNIT: HD4
+Loaded UNIT: HD5
+Loaded UNIT: HD6
+Loaded UNIT: HD7
+Loaded UNIT: HD8
+Loaded UNIT: HD9
+Loaded UNIT: HDA
+Loaded UNIT: HDD
+Loaded UNIT: HE1
+Loaded UNIT: HE2
+Loaded UNIT: HE3
+Loaded UNIT: HE4
+Loaded UNIT: HE5
+Loaded UNIT: HE6
+Loaded UNIT: OH1
+Loaded UNIT: WT1
+Loaded UNIT: WT2
+Loaded UNIT: WT3
+Loaded UNIT: Z10
+Loaded UNIT: Z11
+Loaded UNIT: Z12
+Loaded UNIT: ZN1
+Loaded UNIT: ZN2
+Loaded UNIT: ZN3
+Loaded UNIT: ZN4
+Loaded UNIT: ZN5
+Loaded UNIT: ZN6
+Loaded UNIT: ZN7
+Loaded UNIT: ZN8
+Loaded UNIT: ZN9
+> loadamberparams ZAFF.frcmod #Load ZAFF frcmod file
+Loading parameters: ./ZAFF.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+ZAFF parameter set created by MTK++/MCPB 
+(UNKNOWN ATOM TYPE: S1)
+(UNKNOWN ATOM TYPE: S2)
+(UNKNOWN ATOM TYPE: N1)
+(UNKNOWN ATOM TYPE: S4)
+(UNKNOWN ATOM TYPE: S5)
+(UNKNOWN ATOM TYPE: N4)
+(UNKNOWN ATOM TYPE: N5)
+(UNKNOWN ATOM TYPE: N6)
+(UNKNOWN ATOM TYPE: N7)
+(UNKNOWN ATOM TYPE: O1)
+(UNKNOWN ATOM TYPE: N8)
+(UNKNOWN ATOM TYPE: N9)
+(UNKNOWN ATOM TYPE: N0)
+(UNKNOWN ATOM TYPE: O3)
+(UNKNOWN ATOM TYPE: O4)
+(UNKNOWN ATOM TYPE: E1)
+(UNKNOWN ATOM TYPE: D1)
+(UNKNOWN ATOM TYPE: E2)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: NR)
+> 
+> mol = loadpdb complex_noH.pdb 
+Loading PDB file: ./complex_noH.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue ASN, term: Terminal/beginning, seq. number: 0 to: NASN.
+Mapped residue LEU, term: Terminal/last, seq. number: 171 to: CLEU.
+Mapped residue THR, term: Terminal/last, seq. number: 279 to: CTHR.
+  total atoms in file: 2258
+  Leap added 2286 missing atoms according to residue templates:
+       2286 H / lone pairs
+> 
+> bond mol.173.ZN mol.56.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.59.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.133.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.135.SG #Bond zinc ion with SG atom of residue CYM
+> 
+> solvateOct mol TIP3PBOX 15.0 # Solvate system
+Scaling up box by a factor of 1.419927 to meet diagonal cut criterion
+  Solute vdw bounding box:              63.121 72.631 48.897
+  Total bounding box for atom centers:  115.229 115.229 115.229
+      (box expansion for 'iso' is  37.3%)
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 7  y= 7  z= 7
+  Volume: 785083.169 A^3 (oct)
+  Total mass 428953.314 amu,  Density 0.907 g/cc
+  Added 22026 residues.
+> 
+> addions mol CL 0
+7 CL ions required to neutralize.
+Adding 7 counter ions to "mol" using 1A grid
+Total solute charge:   7.00  Max atom radius:   2.00
+Grid extends from solute vdw + 4.50  to  10.50
+Box:
+   enclosing:  -42.71 -47.17 -52.15   43.98 33.25 38.72
+   sized:			      85.29 80.83 75.85
+   edge:        128.00
+Resolution:      1.00 Angstrom.
+Tree depth: 7
+Volume =  4.23% of box, grid points 88773
+Solvent present: replacing closest with ion
+	 when steric overlaps occur
+Calculating grid charges
+(Replacing solvent molecule)
+Placed CL in mol at (-10.86, -7.94, -35.08).
+(Replacing solvent molecule)
+Placed CL in mol at (-12.01, -8.01, 25.24).
+(Replacing solvent molecule)
+Placed CL in mol at (-5.95, 5.86, -31.80).
+(Replacing solvent molecule)
+Placed CL in mol at (17.10, -28.31, -12.89).
+(Replacing solvent molecule)
+Placed CL in mol at (-22.06, -10.33, 17.60).
+(Replacing solvent molecule)
+Placed CL in mol at (-3.29, -16.52, 18.93).
+(Replacing solvent molecule)
+Placed CL in mol at (-10.54, -2.03, -27.35).
+
+Done adding ions.
+> 
+> savepdb mol complex_solvated.pdb #Save the pdb file
+Writing pdb file: complex_solvated.pdb
+   printing CRYST1 record to PDB file with box info
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NASN -> ASN
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CTHR -> THR
+> saveamberparm mol complex.prmtop complex.inpcrd #Save the topology and coordinate files
+Checking Unit.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+There is a bond of 59.537 angstroms between ZN and N atoms:
+-------  .R<ZN1 173>.A<ZN 1> and .R<THR 174>.A<N 1>
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Error!
+Could not find bond parameter for atom types: ZN - N
+        for atom ZN at position 25.505195, -12.760082, -2.653152 
+        and atom N at position -25.766718, 5.863087, 21.199950.
+Building angle parameters.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Error!
+Could not find angle parameter for atom types: S1 - ZN - N
+        for atom SG at position 24.666770, -10.535253, -3.193175,
+            atom ZN at position 25.505195, -12.760082, -2.653152,
+        and atom N at position -25.766718, 5.863087, 21.199950.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Error!
+Could not find angle parameter for atom types: S1 - ZN - N
+        for atom SG at position 26.860452, -13.437349, -4.703030,
+            atom ZN at position 25.505195, -12.760082, -2.653152,
+        and atom N at position -25.766718, 5.863087, 21.199950.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Error!
+Could not find angle parameter for atom types: S1 - ZN - N
+        for atom SG at position 26.961376, -12.800742, -0.598568,
+            atom ZN at position 25.505195, -12.760082, -2.653152,
+        and atom N at position -25.766718, 5.863087, 21.199950.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Error!
+Could not find angle parameter for atom types: S1 - ZN - N
+        for atom SG at position 23.680275, -14.393682, -2.337828,
+            atom ZN at position 25.505195, -12.760082, -2.653152,
+        and atom N at position -25.766718, 5.863087, 21.199950.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Error!
+Could not find angle parameter for atom types: ZN - N - H
+        for atom ZN at position 25.505195, -12.760082, -2.653152,
+            atom N at position -25.766718, 5.863087, 21.199950,
+        and atom H at position -26.225061, 5.986624, 22.091442.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Error!
+Could not find angle parameter for atom types: ZN - N - XC
+        for atom ZN at position 25.505195, -12.760082, -2.653152,
+            atom N at position -25.766718, 5.863087, 21.199950,
+        and atom CA at position -26.591468, 5.858791, 19.990044.
+Building proper torsion parameters.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Error!
+ ** No torsion terms for atom types: S1-ZN-N-H
+        for atom SG at position 24.666770, -10.535253, -3.193175,
+            atom ZN at position 25.505195, -12.760082, -2.653152,
+            atom N at position -25.766718, 5.863087, 21.199950,
+        and atom H at position -26.225061, 5.986624, 22.091442.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Error!
+ ** No torsion terms for atom types: S1-ZN-N-XC
+        for atom SG at position 24.666770, -10.535253, -3.193175,
+            atom ZN at position 25.505195, -12.760082, -2.653152,
+            atom N at position -25.766718, 5.863087, 21.199950,
+        and atom CA at position -26.591468, 5.858791, 19.990044.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Error!
+ ** No torsion terms for atom types: CT-S1-ZN-N
+        for atom CB at position 23.383542, -10.860040, -4.439192,
+            atom SG at position 24.666770, -10.535253, -3.193175,
+            atom ZN at position 25.505195, -12.760082, -2.653152,
+        and atom N at position -25.766718, 5.863087, 21.199950.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Error!
+ ** No torsion terms for atom types: S1-ZN-N-H
+        for atom SG at position 26.860452, -13.437349, -4.703030,
+            atom ZN at position 25.505195, -12.760082, -2.653152,
+            atom N at position -25.766718, 5.863087, 21.199950,
+        and atom H at position -26.225061, 5.986624, 22.091442.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Error!
+ ** No torsion terms for atom types: S1-ZN-N-XC
+        for atom SG at position 26.860452, -13.437349, -4.703030,
+            atom ZN at position 25.505195, -12.760082, -2.653152,
+            atom N at position -25.766718, 5.863087, 21.199950,
+        and atom CA at position -26.591468, 5.858791, 19.990044.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Error!
+ ** No torsion terms for atom types: CT-S1-ZN-N
+        for atom CB at position 26.747209, -12.208717, -6.043724,
+            atom SG at position 26.860452, -13.437349, -4.703030,
+            atom ZN at position 25.505195, -12.760082, -2.653152,
+        and atom N at position -25.766718, 5.863087, 21.199950.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Error!
+ ** No torsion terms for atom types: S1-ZN-N-H
+        for atom SG at position 26.961376, -12.800742, -0.598568,
+            atom ZN at position 25.505195, -12.760082, -2.653152,
+            atom N at position -25.766718, 5.863087, 21.199950,
+        and atom H at position -26.225061, 5.986624, 22.091442.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Error!
+ ** No torsion terms for atom types: S1-ZN-N-XC
+        for atom SG at position 26.961376, -12.800742, -0.598568,
+            atom ZN at position 25.505195, -12.760082, -2.653152,
+            atom N at position -25.766718, 5.863087, 21.199950,
+        and atom CA at position -26.591468, 5.858791, 19.990044.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Error!
+ ** No torsion terms for atom types: CT-S1-ZN-N
+        for atom CB at position 26.501334, -11.315191, 0.366620,
+            atom SG at position 26.961376, -12.800742, -0.598568,
+            atom ZN at position 25.505195, -12.760082, -2.653152,
+        and atom N at position -25.766718, 5.863087, 21.199950.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Error!
+ ** No torsion terms for atom types: S1-ZN-N-H
+        for atom SG at position 23.680275, -14.393682, -2.337828,
+            atom ZN at position 25.505195, -12.760082, -2.653152,
+            atom N at position -25.766718, 5.863087, 21.199950,
+        and atom H at position -26.225061, 5.986624, 22.091442.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Error!
+ ** No torsion terms for atom types: S1-ZN-N-XC
+        for atom SG at position 23.680275, -14.393682, -2.337828,
+            atom ZN at position 25.505195, -12.760082, -2.653152,
+            atom N at position -25.766718, 5.863087, 21.199950,
+        and atom CA at position -26.591468, 5.858791, 19.990044.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Error!
+ ** No torsion terms for atom types: CT-S1-ZN-N
+        for atom CB at position 24.077673, -15.339679, -0.799111,
+            atom SG at position 23.680275, -14.393682, -2.337828,
+            atom ZN at position 25.505195, -12.760082, -2.653152,
+        and atom N at position -25.766718, 5.863087, 21.199950.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <CY1 56>:  -M   CA   N    HN  
+ <CY1 56>:  CA   +M   C    O   
+ <CY1 59>:  -M   CA   N    HN  
+ <CY1 59>:  CA   +M   C    O   
+ <CY1 133>:  -M   CA   N    HN  
+ <CY1 133>:  CA   +M   C    O   
+ <CY1 135>:  -M   CA   N    HN  
+ <CY1 135>:  CA   +M   C    O   
+ total 890 improper torsions applied
+ 8 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+Parameter file was not saved.
+ quit #Quit tleap
+	Quit
+
+Exiting LEaP: Errors = 19; Warnings = 5; Notes = 1.
+log started: Thu Aug 14 16:41:50 2025
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff19SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "XC"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> set default cmap on
+>> parm19 = loadamberparams parm19.dat
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/parm19.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA + ff19SB
+(UNKNOWN ATOM TYPE: Zn)
+(UNKNOWN ATOM TYPE: EP)
+>> frcmod19SB = loadamberparams frcmod.ff19SB
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ff19SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff19SB AA-specific backbone CMAPs for protein 07/25/2019
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino19.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/amino19.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+> source leaprc.water.tip3p
+----- Source: /home/btan/miniconda3/envs/openbiosim/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /home/btan/miniconda3/envs/openbiosim/dat/leap/cmd/leaprc.water.tip3p done
+>> #
+>> #       Load water and ions for TIP3P + Li/Merz monovalent ions 
+>> #       + Joung-Chetham monovalent ions
+>> #       + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #
+>> #       Note: the Li/Merz monovalent set is loaded only to get Tl+,
+>> #          Cu+, Ag+ NH4+, H3O+.  Since we load Joung-Cheatham second,
+>> #          the alkali halide parameters come from the Joung-Cheatham set
+>> #
+>> addAtomTypes {
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "NH4+"  "N"  "sp3" }
+>>     { "H3O+"  "O"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> loadAmberParams frcmod.tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+>> loadAmberParams frcmod.ions1lm_126_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+>> loadAmberParams frcmod.ionsjc_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+>> 
+> 
+> addAtomTypes { { "ZN" "Zn" "sp3" } { "S3" "S" "sp3" } } # Add atom types for the ZAFF metal center
+> loadamberparams frcmod.ions1lm_126_tip3p #Load the Li/Merz 12-6 parameter set for monovalent ions
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+> loadamberprep ZAFF.prep #Load ZAFF prep file
+Loading Prep file: ./ZAFF.prep
+(UNKNOWN ATOM TYPE: S1)
+(UNKNOWN ATOM TYPE: S2)
+(UNKNOWN ATOM TYPE: N1)
+(UNKNOWN ATOM TYPE: S4)
+(UNKNOWN ATOM TYPE: S5)
+(UNKNOWN ATOM TYPE: N4)
+(UNKNOWN ATOM TYPE: D1)
+(UNKNOWN ATOM TYPE: E1)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: E2)
+(UNKNOWN ATOM TYPE: NR)
+(UNKNOWN ATOM TYPE: N5)
+(UNKNOWN ATOM TYPE: N6)
+(UNKNOWN ATOM TYPE: N7)
+(UNKNOWN ATOM TYPE: O1)
+(UNKNOWN ATOM TYPE: N8)
+(UNKNOWN ATOM TYPE: N9)
+(UNKNOWN ATOM TYPE: N0)
+(UNKNOWN ATOM TYPE: O3)
+(UNKNOWN ATOM TYPE: O4)
+Loaded UNIT: AP1
+Loaded UNIT: AP2
+Loaded UNIT: CY1
+Loaded UNIT: CY2
+Loaded UNIT: CY3
+Loaded UNIT: CY4
+Loaded UNIT: CY5
+Loaded UNIT: HD1
+Loaded UNIT: HD2
+Loaded UNIT: HD3
+Loaded UNIT: HD4
+Loaded UNIT: HD5
+Loaded UNIT: HD6
+Loaded UNIT: HD7
+Loaded UNIT: HD8
+Loaded UNIT: HD9
+Loaded UNIT: HDA
+Loaded UNIT: HDD
+Loaded UNIT: HE1
+Loaded UNIT: HE2
+Loaded UNIT: HE3
+Loaded UNIT: HE4
+Loaded UNIT: HE5
+Loaded UNIT: HE6
+Loaded UNIT: OH1
+Loaded UNIT: WT1
+Loaded UNIT: WT2
+Loaded UNIT: WT3
+Loaded UNIT: Z10
+Loaded UNIT: Z11
+Loaded UNIT: Z12
+Loaded UNIT: ZN1
+Loaded UNIT: ZN2
+Loaded UNIT: ZN3
+Loaded UNIT: ZN4
+Loaded UNIT: ZN5
+Loaded UNIT: ZN6
+Loaded UNIT: ZN7
+Loaded UNIT: ZN8
+Loaded UNIT: ZN9
+> loadamberparams ZAFF.frcmod #Load ZAFF frcmod file
+Loading parameters: ./ZAFF.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+ZAFF parameter set created by MTK++/MCPB 
+(UNKNOWN ATOM TYPE: S1)
+(UNKNOWN ATOM TYPE: S2)
+(UNKNOWN ATOM TYPE: N1)
+(UNKNOWN ATOM TYPE: S4)
+(UNKNOWN ATOM TYPE: S5)
+(UNKNOWN ATOM TYPE: N4)
+(UNKNOWN ATOM TYPE: N5)
+(UNKNOWN ATOM TYPE: N6)
+(UNKNOWN ATOM TYPE: N7)
+(UNKNOWN ATOM TYPE: O1)
+(UNKNOWN ATOM TYPE: N8)
+(UNKNOWN ATOM TYPE: N9)
+(UNKNOWN ATOM TYPE: N0)
+(UNKNOWN ATOM TYPE: O3)
+(UNKNOWN ATOM TYPE: O4)
+(UNKNOWN ATOM TYPE: E1)
+(UNKNOWN ATOM TYPE: D1)
+(UNKNOWN ATOM TYPE: E2)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: NR)
+> 
+> mol = loadpdb complex_noH.pdb 
+Loading PDB file: ./complex_noH.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue ASN, term: Terminal/beginning, seq. number: 0 to: NASN.
+Mapped residue LEU, term: Terminal/last, seq. number: 171 to: CLEU.
+Mapped residue THR, term: Terminal/beginning, seq. number: 173 to: NTHR.
+Mapped residue THR, term: Terminal/last, seq. number: 279 to: CTHR.
+  total atoms in file: 2258
+  Leap added 2288 missing atoms according to residue templates:
+       2288 H / lone pairs
+> 
+> bond mol.173.ZN mol.56.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.59.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.133.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.135.SG #Bond zinc ion with SG atom of residue CYM
+> 
+> solvateOct mol TIP3PBOX 15.0 # Solvate system
+Scaling up box by a factor of 1.420042 to meet diagonal cut criterion
+  Solute vdw bounding box:              63.121 72.639 48.921
+  Total bounding box for atom centers:  115.241 115.241 115.241
+      (box expansion for 'iso' is  37.3%)
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 7  y= 7  z= 7
+  Volume: 785317.280 A^3 (oct)
+  Total mass 429099.458 amu,  Density 0.907 g/cc
+  Added 22034 residues.
+> 
+> addions mol CL 0
+8 CL ions required to neutralize.
+Adding 8 counter ions to "mol" using 1A grid
+Total solute charge:   8.00  Max atom radius:   2.00
+Grid extends from solute vdw + 4.68  to  10.68
+Box:
+   enclosing:  -42.87 -47.35 -52.32   44.16 33.42 38.92
+   sized:			      85.13 80.65 75.68
+   edge:        128.00
+Resolution:      1.00 Angstrom.
+Tree depth: 7
+Volume =  4.26% of box, grid points 89369
+Solvent present: replacing closest with ion
+	 when steric overlaps occur
+Calculating grid charges
+(Replacing solvent molecule)
+Placed CL in mol at (-10.86, -7.94, -35.08).
+(Replacing solvent molecule)
+Placed CL in mol at (-13.89, -11.13, 25.03).
+(Replacing solvent molecule)
+Placed CL in mol at (-12.68, 0.50, -27.51).
+(Replacing solvent molecule)
+Placed CL in mol at (17.10, -28.31, -12.89).
+(Replacing solvent molecule)
+Placed CL in mol at (-21.72, -12.81, 15.96).
+(Replacing solvent molecule)
+Placed CL in mol at (-9.33, 13.91, -27.92).
+(Replacing solvent molecule)
+Placed CL in mol at (-3.29, -16.52, 18.93).
+(Replacing solvent molecule)
+Placed CL in mol at (-31.44, 4.15, 26.10).
+
+Done adding ions.
+> 
+> savepdb mol complex_solvated.pdb #Save the pdb file
+Writing pdb file: complex_solvated.pdb
+   printing CRYST1 record to PDB file with box info
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NASN -> ASN
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NTHR -> THR
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CTHR -> THR
+> saveamberparm mol complex.prmtop complex.inpcrd #Save the topology and coordinate files
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <CY1 56>:  -M   CA   N    HN  
+ <CY1 56>:  CA   +M   C    O   
+ <CY1 59>:  -M   CA   N    HN  
+ <CY1 59>:  CA   +M   C    O   
+ <CY1 133>:  -M   CA   N    HN  
+ <CY1 133>:  CA   +M   C    O   
+ <CY1 135>:  -M   CA   N    HN  
+ <CY1 135>:  CA   +M   C    O   
+ total 889 improper torsions applied
+ 8 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CLEU	1
+	CTHR	1
+	NASN	1
+	NTHR	1
+	WAT	22026
+  )
+ (no restraints)
+ quit #Quit tleap
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 4; Notes = 0.
+log started: Fri Aug 15 12:06:12 2025
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff19SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "XC"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> set default cmap on
+>> parm19 = loadamberparams parm19.dat
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/parm19.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA + ff19SB
+(UNKNOWN ATOM TYPE: Zn)
+(UNKNOWN ATOM TYPE: EP)
+>> frcmod19SB = loadamberparams frcmod.ff19SB
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ff19SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff19SB AA-specific backbone CMAPs for protein 07/25/2019
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino19.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/amino19.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+> source leaprc.water.tip3p
+----- Source: /home/btan/miniconda3/envs/openbiosim/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /home/btan/miniconda3/envs/openbiosim/dat/leap/cmd/leaprc.water.tip3p done
+>> #
+>> #       Load water and ions for TIP3P + Li/Merz monovalent ions 
+>> #       + Joung-Chetham monovalent ions
+>> #       + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #
+>> #       Note: the Li/Merz monovalent set is loaded only to get Tl+,
+>> #          Cu+, Ag+ NH4+, H3O+.  Since we load Joung-Cheatham second,
+>> #          the alkali halide parameters come from the Joung-Cheatham set
+>> #
+>> addAtomTypes {
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "NH4+"  "N"  "sp3" }
+>>     { "H3O+"  "O"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> loadAmberParams frcmod.tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+>> loadAmberParams frcmod.ions1lm_126_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+>> loadAmberParams frcmod.ionsjc_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+>> 
+> 
+> addAtomTypes { { "ZN" "Zn" "sp3" } { "S3" "S" "sp3" } } # Add atom types for the ZAFF metal center
+> loadamberparams frcmod.ions1lm_126_tip3p #Load the Li/Merz 12-6 parameter set for monovalent ions
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+> loadamberprep ZAFF.prep #Load ZAFF prep file
+Loading Prep file: ./ZAFF.prep
+(UNKNOWN ATOM TYPE: S1)
+(UNKNOWN ATOM TYPE: S2)
+(UNKNOWN ATOM TYPE: N1)
+(UNKNOWN ATOM TYPE: S4)
+(UNKNOWN ATOM TYPE: S5)
+(UNKNOWN ATOM TYPE: N4)
+(UNKNOWN ATOM TYPE: D1)
+(UNKNOWN ATOM TYPE: E1)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: E2)
+(UNKNOWN ATOM TYPE: NR)
+(UNKNOWN ATOM TYPE: N5)
+(UNKNOWN ATOM TYPE: N6)
+(UNKNOWN ATOM TYPE: N7)
+(UNKNOWN ATOM TYPE: O1)
+(UNKNOWN ATOM TYPE: N8)
+(UNKNOWN ATOM TYPE: N9)
+(UNKNOWN ATOM TYPE: N0)
+(UNKNOWN ATOM TYPE: O3)
+(UNKNOWN ATOM TYPE: O4)
+Loaded UNIT: AP1
+Loaded UNIT: AP2
+Loaded UNIT: CY1
+Loaded UNIT: CY2
+Loaded UNIT: CY3
+Loaded UNIT: CY4
+Loaded UNIT: CY5
+Loaded UNIT: HD1
+Loaded UNIT: HD2
+Loaded UNIT: HD3
+Loaded UNIT: HD4
+Loaded UNIT: HD5
+Loaded UNIT: HD6
+Loaded UNIT: HD7
+Loaded UNIT: HD8
+Loaded UNIT: HD9
+Loaded UNIT: HDA
+Loaded UNIT: HDD
+Loaded UNIT: HE1
+Loaded UNIT: HE2
+Loaded UNIT: HE3
+Loaded UNIT: HE4
+Loaded UNIT: HE5
+Loaded UNIT: HE6
+Loaded UNIT: OH1
+Loaded UNIT: WT1
+Loaded UNIT: WT2
+Loaded UNIT: WT3
+Loaded UNIT: Z10
+Loaded UNIT: Z11
+Loaded UNIT: Z12
+Loaded UNIT: ZN1
+Loaded UNIT: ZN2
+Loaded UNIT: ZN3
+Loaded UNIT: ZN4
+Loaded UNIT: ZN5
+Loaded UNIT: ZN6
+Loaded UNIT: ZN7
+Loaded UNIT: ZN8
+Loaded UNIT: ZN9
+> loadamberparams ZAFF.frcmod #Load ZAFF frcmod file
+Loading parameters: ./ZAFF.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+ZAFF parameter set created by MTK++/MCPB 
+(UNKNOWN ATOM TYPE: S1)
+(UNKNOWN ATOM TYPE: S2)
+(UNKNOWN ATOM TYPE: N1)
+(UNKNOWN ATOM TYPE: S4)
+(UNKNOWN ATOM TYPE: S5)
+(UNKNOWN ATOM TYPE: N4)
+(UNKNOWN ATOM TYPE: N5)
+(UNKNOWN ATOM TYPE: N6)
+(UNKNOWN ATOM TYPE: N7)
+(UNKNOWN ATOM TYPE: O1)
+(UNKNOWN ATOM TYPE: N8)
+(UNKNOWN ATOM TYPE: N9)
+(UNKNOWN ATOM TYPE: N0)
+(UNKNOWN ATOM TYPE: O3)
+(UNKNOWN ATOM TYPE: O4)
+(UNKNOWN ATOM TYPE: E1)
+(UNKNOWN ATOM TYPE: D1)
+(UNKNOWN ATOM TYPE: E2)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: NR)
+> 
+> mol = loadpdb complex_noH.pdb 
+Loading PDB file: ./complex_noH.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue ASN, term: Terminal/beginning, seq. number: 0 to: NASN.
+Mapped residue LEU, term: Terminal/last, seq. number: 171 to: CLEU.
+Mapped residue THR, term: Terminal/beginning, seq. number: 173 to: NTHR.
+Mapped residue THR, term: Terminal/last, seq. number: 279 to: CTHR.
+  total atoms in file: 2258
+  Leap added 2288 missing atoms according to residue templates:
+       2288 H / lone pairs
+> 
+> bond mol.173.ZN mol.56.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.59.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.133.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.135.SG #Bond zinc ion with SG atom of residue CYM
+> 
+> solvateOct mol TIP3PBOX 20.0 # Solvate system
+Scaling up box by a factor of 1.397243 to meet diagonal cut criterion
+  Solute vdw bounding box:              63.121 72.639 48.921
+  Total bounding box for atom centers:  128.529 128.529 128.529
+      (box expansion for 'iso' is  32.4%)
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 7  y= 7  z= 7
+  Volume: 1086608.200 A^3 (oct)
+  Total mass 599656.930 amu,  Density 0.916 g/cc
+  Added 31501 residues.
+> 
+> addions mol CL 0
+8 CL ions required to neutralize.
+Adding 8 counter ions to "mol" using 1A grid
+Total solute charge:   8.00  Max atom radius:   2.00
+Grid extends from solute vdw + 4.68  to  10.68
+Box:
+   enclosing:  -42.93 -47.20 -52.30   44.11 33.58 38.94
+   sized:			      85.07 80.80 75.70
+   edge:        128.00
+Resolution:      1.00 Angstrom.
+Tree depth: 7
+Volume =  4.26% of box, grid points 89369
+Solvent present: replacing closest with ion
+	 when steric overlaps occur
+Calculating grid charges
+(Replacing solvent molecule)
+Placed CL in mol at (-10.92, -7.79, -35.06).
+(Replacing solvent molecule)
+Placed CL in mol at (-13.95, -10.98, 25.05).
+(Replacing solvent molecule)
+Placed CL in mol at (-12.73, 0.65, -27.49).
+(Replacing solvent molecule)
+Placed CL in mol at (17.04, -28.15, -12.87).
+(Replacing solvent molecule)
+Placed CL in mol at (-21.78, -12.65, 15.98).
+(Replacing solvent molecule)
+Placed CL in mol at (-9.39, 14.07, -27.89).
+(Replacing solvent molecule)
+Placed CL in mol at (-3.34, -16.36, 18.96).
+(Replacing solvent molecule)
+Placed CL in mol at (-31.50, 4.30, 26.12).
+
+Done adding ions.
+> 
+> savepdb mol complex_solvated.pdb #Save the pdb file
+Writing pdb file: complex_solvated.pdb
+   printing CRYST1 record to PDB file with box info
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NASN -> ASN
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NTHR -> THR
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CTHR -> THR
+> saveamberparm mol complex.prmtop complex.inpcrd #Save the topology and coordinate files
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <CY1 56>:  -M   CA   N    HN  
+ <CY1 56>:  CA   +M   C    O   
+ <CY1 59>:  -M   CA   N    HN  
+ <CY1 59>:  CA   +M   C    O   
+ <CY1 133>:  -M   CA   N    HN  
+ <CY1 133>:  CA   +M   C    O   
+ <CY1 135>:  -M   CA   N    HN  
+ <CY1 135>:  CA   +M   C    O   
+ total 889 improper torsions applied
+ 8 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CLEU	1
+	CTHR	1
+	NASN	1
+	NTHR	1
+	WAT	31493
+  )
+ (no restraints)
+ quit #Quit tleap
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 4; Notes = 0.
+log started: Fri Aug 22 12:51:57 2025
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff19SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "XC"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> set default cmap on
+>> parm19 = loadamberparams parm19.dat
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/parm19.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA + ff19SB
+(UNKNOWN ATOM TYPE: Zn)
+(UNKNOWN ATOM TYPE: EP)
+>> frcmod19SB = loadamberparams frcmod.ff19SB
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ff19SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff19SB AA-specific backbone CMAPs for protein 07/25/2019
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino19.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/amino19.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+> source leaprc.water.tip3p
+----- Source: /home/btan/miniconda3/envs/openbiosim/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /home/btan/miniconda3/envs/openbiosim/dat/leap/cmd/leaprc.water.tip3p done
+>> #
+>> #       Load water and ions for TIP3P + Li/Merz monovalent ions 
+>> #       + Joung-Chetham monovalent ions
+>> #       + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #
+>> #       Note: the Li/Merz monovalent set is loaded only to get Tl+,
+>> #          Cu+, Ag+ NH4+, H3O+.  Since we load Joung-Cheatham second,
+>> #          the alkali halide parameters come from the Joung-Cheatham set
+>> #
+>> addAtomTypes {
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "NH4+"  "N"  "sp3" }
+>>     { "H3O+"  "O"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> loadAmberParams frcmod.tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+>> loadAmberParams frcmod.ions1lm_126_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+>> loadAmberParams frcmod.ionsjc_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+>> 
+> 
+> addAtomTypes { { "ZN" "Zn" "sp3" } { "S3" "S" "sp3" } } # Add atom types for the ZAFF metal center
+> loadamberparams frcmod.ions1lm_126_tip3p #Load the Li/Merz 12-6 parameter set for monovalent ions
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+> loadamberprep ZAFF.prep #Load ZAFF prep file
+Loading Prep file: ./ZAFF.prep
+(UNKNOWN ATOM TYPE: S1)
+(UNKNOWN ATOM TYPE: S2)
+(UNKNOWN ATOM TYPE: N1)
+(UNKNOWN ATOM TYPE: S4)
+(UNKNOWN ATOM TYPE: S5)
+(UNKNOWN ATOM TYPE: N4)
+(UNKNOWN ATOM TYPE: D1)
+(UNKNOWN ATOM TYPE: E1)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: E2)
+(UNKNOWN ATOM TYPE: NR)
+(UNKNOWN ATOM TYPE: N5)
+(UNKNOWN ATOM TYPE: N6)
+(UNKNOWN ATOM TYPE: N7)
+(UNKNOWN ATOM TYPE: O1)
+(UNKNOWN ATOM TYPE: N8)
+(UNKNOWN ATOM TYPE: N9)
+(UNKNOWN ATOM TYPE: N0)
+(UNKNOWN ATOM TYPE: O3)
+(UNKNOWN ATOM TYPE: O4)
+Loaded UNIT: AP1
+Loaded UNIT: AP2
+Loaded UNIT: CY1
+Loaded UNIT: CY2
+Loaded UNIT: CY3
+Loaded UNIT: CY4
+Loaded UNIT: CY5
+Loaded UNIT: HD1
+Loaded UNIT: HD2
+Loaded UNIT: HD3
+Loaded UNIT: HD4
+Loaded UNIT: HD5
+Loaded UNIT: HD6
+Loaded UNIT: HD7
+Loaded UNIT: HD8
+Loaded UNIT: HD9
+Loaded UNIT: HDA
+Loaded UNIT: HDD
+Loaded UNIT: HE1
+Loaded UNIT: HE2
+Loaded UNIT: HE3
+Loaded UNIT: HE4
+Loaded UNIT: HE5
+Loaded UNIT: HE6
+Loaded UNIT: OH1
+Loaded UNIT: WT1
+Loaded UNIT: WT2
+Loaded UNIT: WT3
+Loaded UNIT: Z10
+Loaded UNIT: Z11
+Loaded UNIT: Z12
+Loaded UNIT: ZN1
+Loaded UNIT: ZN2
+Loaded UNIT: ZN3
+Loaded UNIT: ZN4
+Loaded UNIT: ZN5
+Loaded UNIT: ZN6
+Loaded UNIT: ZN7
+Loaded UNIT: ZN8
+Loaded UNIT: ZN9
+> loadamberparams ZAFF.frcmod #Load ZAFF frcmod file
+Loading parameters: ./ZAFF.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+ZAFF parameter set created by MTK++/MCPB 
+(UNKNOWN ATOM TYPE: S1)
+(UNKNOWN ATOM TYPE: S2)
+(UNKNOWN ATOM TYPE: N1)
+(UNKNOWN ATOM TYPE: S4)
+(UNKNOWN ATOM TYPE: S5)
+(UNKNOWN ATOM TYPE: N4)
+(UNKNOWN ATOM TYPE: N5)
+(UNKNOWN ATOM TYPE: N6)
+(UNKNOWN ATOM TYPE: N7)
+(UNKNOWN ATOM TYPE: O1)
+(UNKNOWN ATOM TYPE: N8)
+(UNKNOWN ATOM TYPE: N9)
+(UNKNOWN ATOM TYPE: N0)
+(UNKNOWN ATOM TYPE: O3)
+(UNKNOWN ATOM TYPE: O4)
+(UNKNOWN ATOM TYPE: E1)
+(UNKNOWN ATOM TYPE: D1)
+(UNKNOWN ATOM TYPE: E2)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: NR)
+> 
+> mol = loadpdb complex_DDB1_noH.pdb 
+Loading PDB file: ./complex_DDB1_noH.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue MET, term: Terminal/beginning, seq. number: 0 to: NMET.
+Mapped residue LEU, term: Terminal/last, seq. number: 998 to: CLEU.
+Mapped residue THR, term: Terminal/beginning, seq. number: 1000 to: NTHR.
+Mapped residue THR, term: Terminal/last, seq. number: 1106 to: CTHR.
+Created a new atom named: OXT within residue: .R<HIE 1107>
+  total atoms in file: 8743
+  Leap added 8736 missing atoms according to residue templates:
+       8736 H / lone pairs
+  The file contained 1 atoms not in residue templates
+> 
+> bond mol.173.ZN mol.56.SG #Bond zinc ion with SG atom of residue CYM
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Fatal Error!
+bond: Argument #1 is of type String must be of type: [atom]
+    Here are some suggestions for correcting this error:
+    Verify the type of an argument with the desc command.
+    Check for alternate argument names with the list command.
+usage:  bond <atom1> <atom2> [order]
+
+Exiting LEaP: Errors = 1; Warnings = 0; Notes = 0.
+log started: Fri Aug 22 12:53:09 2025
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff19SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "XC"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> set default cmap on
+>> parm19 = loadamberparams parm19.dat
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/parm19.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA + ff19SB
+(UNKNOWN ATOM TYPE: Zn)
+(UNKNOWN ATOM TYPE: EP)
+>> frcmod19SB = loadamberparams frcmod.ff19SB
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ff19SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff19SB AA-specific backbone CMAPs for protein 07/25/2019
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino19.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/amino19.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+> source leaprc.water.tip3p
+----- Source: /home/btan/miniconda3/envs/openbiosim/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /home/btan/miniconda3/envs/openbiosim/dat/leap/cmd/leaprc.water.tip3p done
+>> #
+>> #       Load water and ions for TIP3P + Li/Merz monovalent ions 
+>> #       + Joung-Chetham monovalent ions
+>> #       + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #
+>> #       Note: the Li/Merz monovalent set is loaded only to get Tl+,
+>> #          Cu+, Ag+ NH4+, H3O+.  Since we load Joung-Cheatham second,
+>> #          the alkali halide parameters come from the Joung-Cheatham set
+>> #
+>> addAtomTypes {
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "NH4+"  "N"  "sp3" }
+>>     { "H3O+"  "O"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> loadAmberParams frcmod.tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+>> loadAmberParams frcmod.ions1lm_126_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+>> loadAmberParams frcmod.ionsjc_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+>> 
+> 
+> addAtomTypes { { "ZN" "Zn" "sp3" } { "S3" "S" "sp3" } } # Add atom types for the ZAFF metal center
+> loadamberparams frcmod.ions1lm_126_tip3p #Load the Li/Merz 12-6 parameter set for monovalent ions
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+> loadamberprep ZAFF.prep #Load ZAFF prep file
+Loading Prep file: ./ZAFF.prep
+(UNKNOWN ATOM TYPE: S1)
+(UNKNOWN ATOM TYPE: S2)
+(UNKNOWN ATOM TYPE: N1)
+(UNKNOWN ATOM TYPE: S4)
+(UNKNOWN ATOM TYPE: S5)
+(UNKNOWN ATOM TYPE: N4)
+(UNKNOWN ATOM TYPE: D1)
+(UNKNOWN ATOM TYPE: E1)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: E2)
+(UNKNOWN ATOM TYPE: NR)
+(UNKNOWN ATOM TYPE: N5)
+(UNKNOWN ATOM TYPE: N6)
+(UNKNOWN ATOM TYPE: N7)
+(UNKNOWN ATOM TYPE: O1)
+(UNKNOWN ATOM TYPE: N8)
+(UNKNOWN ATOM TYPE: N9)
+(UNKNOWN ATOM TYPE: N0)
+(UNKNOWN ATOM TYPE: O3)
+(UNKNOWN ATOM TYPE: O4)
+Loaded UNIT: AP1
+Loaded UNIT: AP2
+Loaded UNIT: CY1
+Loaded UNIT: CY2
+Loaded UNIT: CY3
+Loaded UNIT: CY4
+Loaded UNIT: CY5
+Loaded UNIT: HD1
+Loaded UNIT: HD2
+Loaded UNIT: HD3
+Loaded UNIT: HD4
+Loaded UNIT: HD5
+Loaded UNIT: HD6
+Loaded UNIT: HD7
+Loaded UNIT: HD8
+Loaded UNIT: HD9
+Loaded UNIT: HDA
+Loaded UNIT: HDD
+Loaded UNIT: HE1
+Loaded UNIT: HE2
+Loaded UNIT: HE3
+Loaded UNIT: HE4
+Loaded UNIT: HE5
+Loaded UNIT: HE6
+Loaded UNIT: OH1
+Loaded UNIT: WT1
+Loaded UNIT: WT2
+Loaded UNIT: WT3
+Loaded UNIT: Z10
+Loaded UNIT: Z11
+Loaded UNIT: Z12
+Loaded UNIT: ZN1
+Loaded UNIT: ZN2
+Loaded UNIT: ZN3
+Loaded UNIT: ZN4
+Loaded UNIT: ZN5
+Loaded UNIT: ZN6
+Loaded UNIT: ZN7
+Loaded UNIT: ZN8
+Loaded UNIT: ZN9
+> loadamberparams ZAFF.frcmod #Load ZAFF frcmod file
+Loading parameters: ./ZAFF.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+ZAFF parameter set created by MTK++/MCPB 
+(UNKNOWN ATOM TYPE: S1)
+(UNKNOWN ATOM TYPE: S2)
+(UNKNOWN ATOM TYPE: N1)
+(UNKNOWN ATOM TYPE: S4)
+(UNKNOWN ATOM TYPE: S5)
+(UNKNOWN ATOM TYPE: N4)
+(UNKNOWN ATOM TYPE: N5)
+(UNKNOWN ATOM TYPE: N6)
+(UNKNOWN ATOM TYPE: N7)
+(UNKNOWN ATOM TYPE: O1)
+(UNKNOWN ATOM TYPE: N8)
+(UNKNOWN ATOM TYPE: N9)
+(UNKNOWN ATOM TYPE: N0)
+(UNKNOWN ATOM TYPE: O3)
+(UNKNOWN ATOM TYPE: O4)
+(UNKNOWN ATOM TYPE: E1)
+(UNKNOWN ATOM TYPE: D1)
+(UNKNOWN ATOM TYPE: E2)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: NR)
+> 
+> mol = loadpdb complex_DDB1_noH.pdb 
+Loading PDB file: ./complex_DDB1_noH.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue MET, term: Terminal/beginning, seq. number: 0 to: NMET.
+Mapped residue LEU, term: Terminal/last, seq. number: 998 to: CLEU.
+Mapped residue THR, term: Terminal/beginning, seq. number: 1000 to: NTHR.
+Mapped residue THR, term: Terminal/last, seq. number: 1106 to: CTHR.
+Created a new atom named: OXT within residue: .R<HIE 1107>
+  total atoms in file: 8743
+  Leap added 8736 missing atoms according to residue templates:
+       8736 H / lone pairs
+  The file contained 1 atoms not in residue templates
+> 
+> savepdb mol debug.pdb
+Writing pdb file: debug.pdb
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NMET -> MET
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NTHR -> THR
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CTHR -> THR
+> 
+> bond mol.173.ZN mol.56.SG #Bond zinc ion with SG atom of residue CYM
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Fatal Error!
+bond: Argument #1 is of type String must be of type: [atom]
+    Here are some suggestions for correcting this error:
+    Verify the type of an argument with the desc command.
+    Check for alternate argument names with the list command.
+usage:  bond <atom1> <atom2> [order]
+
+Exiting LEaP: Errors = 1; Warnings = 4; Notes = 0.
+log started: Fri Aug 22 12:56:21 2025
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff19SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "XC"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> set default cmap on
+>> parm19 = loadamberparams parm19.dat
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/parm19.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA + ff19SB
+(UNKNOWN ATOM TYPE: Zn)
+(UNKNOWN ATOM TYPE: EP)
+>> frcmod19SB = loadamberparams frcmod.ff19SB
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ff19SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff19SB AA-specific backbone CMAPs for protein 07/25/2019
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino19.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/amino19.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+> source leaprc.water.tip3p
+----- Source: /home/btan/miniconda3/envs/openbiosim/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /home/btan/miniconda3/envs/openbiosim/dat/leap/cmd/leaprc.water.tip3p done
+>> #
+>> #       Load water and ions for TIP3P + Li/Merz monovalent ions 
+>> #       + Joung-Chetham monovalent ions
+>> #       + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #
+>> #       Note: the Li/Merz monovalent set is loaded only to get Tl+,
+>> #          Cu+, Ag+ NH4+, H3O+.  Since we load Joung-Cheatham second,
+>> #          the alkali halide parameters come from the Joung-Cheatham set
+>> #
+>> addAtomTypes {
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "NH4+"  "N"  "sp3" }
+>>     { "H3O+"  "O"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> loadAmberParams frcmod.tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+>> loadAmberParams frcmod.ions1lm_126_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+>> loadAmberParams frcmod.ionsjc_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+>> 
+> 
+> addAtomTypes { { "ZN" "Zn" "sp3" } { "S3" "S" "sp3" } } # Add atom types for the ZAFF metal center
+> loadamberparams frcmod.ions1lm_126_tip3p #Load the Li/Merz 12-6 parameter set for monovalent ions
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+> loadamberprep ZAFF.prep #Load ZAFF prep file
+Loading Prep file: ./ZAFF.prep
+(UNKNOWN ATOM TYPE: S1)
+(UNKNOWN ATOM TYPE: S2)
+(UNKNOWN ATOM TYPE: N1)
+(UNKNOWN ATOM TYPE: S4)
+(UNKNOWN ATOM TYPE: S5)
+(UNKNOWN ATOM TYPE: N4)
+(UNKNOWN ATOM TYPE: D1)
+(UNKNOWN ATOM TYPE: E1)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: E2)
+(UNKNOWN ATOM TYPE: NR)
+(UNKNOWN ATOM TYPE: N5)
+(UNKNOWN ATOM TYPE: N6)
+(UNKNOWN ATOM TYPE: N7)
+(UNKNOWN ATOM TYPE: O1)
+(UNKNOWN ATOM TYPE: N8)
+(UNKNOWN ATOM TYPE: N9)
+(UNKNOWN ATOM TYPE: N0)
+(UNKNOWN ATOM TYPE: O3)
+(UNKNOWN ATOM TYPE: O4)
+Loaded UNIT: AP1
+Loaded UNIT: AP2
+Loaded UNIT: CY1
+Loaded UNIT: CY2
+Loaded UNIT: CY3
+Loaded UNIT: CY4
+Loaded UNIT: CY5
+Loaded UNIT: HD1
+Loaded UNIT: HD2
+Loaded UNIT: HD3
+Loaded UNIT: HD4
+Loaded UNIT: HD5
+Loaded UNIT: HD6
+Loaded UNIT: HD7
+Loaded UNIT: HD8
+Loaded UNIT: HD9
+Loaded UNIT: HDA
+Loaded UNIT: HDD
+Loaded UNIT: HE1
+Loaded UNIT: HE2
+Loaded UNIT: HE3
+Loaded UNIT: HE4
+Loaded UNIT: HE5
+Loaded UNIT: HE6
+Loaded UNIT: OH1
+Loaded UNIT: WT1
+Loaded UNIT: WT2
+Loaded UNIT: WT3
+Loaded UNIT: Z10
+Loaded UNIT: Z11
+Loaded UNIT: Z12
+Loaded UNIT: ZN1
+Loaded UNIT: ZN2
+Loaded UNIT: ZN3
+Loaded UNIT: ZN4
+Loaded UNIT: ZN5
+Loaded UNIT: ZN6
+Loaded UNIT: ZN7
+Loaded UNIT: ZN8
+Loaded UNIT: ZN9
+> loadamberparams ZAFF.frcmod #Load ZAFF frcmod file
+Loading parameters: ./ZAFF.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+ZAFF parameter set created by MTK++/MCPB 
+(UNKNOWN ATOM TYPE: S1)
+(UNKNOWN ATOM TYPE: S2)
+(UNKNOWN ATOM TYPE: N1)
+(UNKNOWN ATOM TYPE: S4)
+(UNKNOWN ATOM TYPE: S5)
+(UNKNOWN ATOM TYPE: N4)
+(UNKNOWN ATOM TYPE: N5)
+(UNKNOWN ATOM TYPE: N6)
+(UNKNOWN ATOM TYPE: N7)
+(UNKNOWN ATOM TYPE: O1)
+(UNKNOWN ATOM TYPE: N8)
+(UNKNOWN ATOM TYPE: N9)
+(UNKNOWN ATOM TYPE: N0)
+(UNKNOWN ATOM TYPE: O3)
+(UNKNOWN ATOM TYPE: O4)
+(UNKNOWN ATOM TYPE: E1)
+(UNKNOWN ATOM TYPE: D1)
+(UNKNOWN ATOM TYPE: E2)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: NR)
+> 
+> mol = loadpdb complex_DDB1_noH.pdb 
+Loading PDB file: ./complex_DDB1_noH.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue ASN, term: Terminal/beginning, seq. number: 0 to: NASN.
+Mapped residue LEU, term: Terminal/last, seq. number: 171 to: CLEU.
+Mapped residue THR, term: Terminal/beginning, seq. number: 173 to: NTHR.
+Mapped residue THR, term: Terminal/last, seq. number: 279 to: CTHR.
+Mapped residue MET, term: Terminal/beginning, seq. number: 280 to: NMET.
+Mapped residue HIE, term: Terminal/last, seq. number: 1106 to: CHIE.
+  total atoms in file: 8743
+  Leap added 8738 missing atoms according to residue templates:
+       8738 H / lone pairs
+> 
+> savepdb mol debug.pdb
+Writing pdb file: debug.pdb
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NASN -> ASN
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NTHR -> THR
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CTHR -> THR
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NMET -> MET
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CHIE -> HIE
+> 
+> bond mol.173.ZN mol.56.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.59.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.133.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.135.SG #Bond zinc ion with SG atom of residue CYM
+> 
+> solvateOct mol TIP3PBOX 20.0 # Solvate system
+Scaling up box by a factor of 1.256386 to meet diagonal cut criterion
+  Solute vdw bounding box:              76.913 115.031 107.468
+  Total bounding box for atom centers:  165.286 165.286 165.286
+      (box expansion for 'iso' is  36.2%)
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 9  y= 9  z= 9
+  Volume: 2298990.734 A^3 (oct)
+  Total mass 1285717.988 amu,  Density 0.929 g/cc
+  Added 64459 residues.
+> 
+> addions mol CL 0
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+addIons: 1st Ion & target unit have charges of the same sign:
+     unit charge = -23; ion1 charge = -1;
+     can't neutralize.
+> 
+> savepdb mol complex_DDB1_solvated.pdb #Save the pdb file
+Writing pdb file: complex_DDB1_solvated.pdb
+   printing CRYST1 record to PDB file with box info
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NASN -> ASN
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NTHR -> THR
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CTHR -> THR
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NMET -> MET
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CHIE -> HIE
+> saveamberparm mol complex_DDB1.prmtop complex_DDB1.inpcrd #Save the topology and coordinate files
+Checking Unit.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+The unperturbed charge of the unit (-22.999990) is not zero.
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <CY1 56>:  -M   CA   N    HN  
+ <CY1 56>:  CA   +M   C    O   
+ <CY1 59>:  -M   CA   N    HN  
+ <CY1 59>:  CA   +M   C    O   
+ <CY1 133>:  -M   CA   N    HN  
+ <CY1 133>:  CA   +M   C    O   
+ <CY1 135>:  -M   CA   N    HN  
+ <CY1 135>:  CA   +M   C    O   
+ total 3439 improper torsions applied
+ 8 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CHIE	1
+	CLEU	1
+	CTHR	1
+	NASN	1
+	NMET	1
+	NTHR	1
+	WAT	64459
+  )
+ (no restraints)
+ quit #Quit tleap
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 14; Notes = 1.
+log started: Fri Aug 22 12:56:37 2025
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff19SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "XC"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> set default cmap on
+>> parm19 = loadamberparams parm19.dat
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/parm19.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA + ff19SB
+(UNKNOWN ATOM TYPE: Zn)
+(UNKNOWN ATOM TYPE: EP)
+>> frcmod19SB = loadamberparams frcmod.ff19SB
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ff19SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff19SB AA-specific backbone CMAPs for protein 07/25/2019
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino19.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/amino19.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+> source leaprc.water.tip3p
+----- Source: /home/btan/miniconda3/envs/openbiosim/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /home/btan/miniconda3/envs/openbiosim/dat/leap/cmd/leaprc.water.tip3p done
+>> #
+>> #       Load water and ions for TIP3P + Li/Merz monovalent ions 
+>> #       + Joung-Chetham monovalent ions
+>> #       + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #
+>> #       Note: the Li/Merz monovalent set is loaded only to get Tl+,
+>> #          Cu+, Ag+ NH4+, H3O+.  Since we load Joung-Cheatham second,
+>> #          the alkali halide parameters come from the Joung-Cheatham set
+>> #
+>> addAtomTypes {
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "NH4+"  "N"  "sp3" }
+>>     { "H3O+"  "O"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> loadAmberParams frcmod.tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+>> loadAmberParams frcmod.ions1lm_126_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+>> loadAmberParams frcmod.ionsjc_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+>> 
+> 
+> addAtomTypes { { "ZN" "Zn" "sp3" } { "S3" "S" "sp3" } } # Add atom types for the ZAFF metal center
+> loadamberparams frcmod.ions1lm_126_tip3p #Load the Li/Merz 12-6 parameter set for monovalent ions
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+> loadamberprep ZAFF.prep #Load ZAFF prep file
+Loading Prep file: ./ZAFF.prep
+(UNKNOWN ATOM TYPE: S1)
+(UNKNOWN ATOM TYPE: S2)
+(UNKNOWN ATOM TYPE: N1)
+(UNKNOWN ATOM TYPE: S4)
+(UNKNOWN ATOM TYPE: S5)
+(UNKNOWN ATOM TYPE: N4)
+(UNKNOWN ATOM TYPE: D1)
+(UNKNOWN ATOM TYPE: E1)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: E2)
+(UNKNOWN ATOM TYPE: NR)
+(UNKNOWN ATOM TYPE: N5)
+(UNKNOWN ATOM TYPE: N6)
+(UNKNOWN ATOM TYPE: N7)
+(UNKNOWN ATOM TYPE: O1)
+(UNKNOWN ATOM TYPE: N8)
+(UNKNOWN ATOM TYPE: N9)
+(UNKNOWN ATOM TYPE: N0)
+(UNKNOWN ATOM TYPE: O3)
+(UNKNOWN ATOM TYPE: O4)
+Loaded UNIT: AP1
+Loaded UNIT: AP2
+Loaded UNIT: CY1
+Loaded UNIT: CY2
+Loaded UNIT: CY3
+Loaded UNIT: CY4
+Loaded UNIT: CY5
+Loaded UNIT: HD1
+Loaded UNIT: HD2
+Loaded UNIT: HD3
+Loaded UNIT: HD4
+Loaded UNIT: HD5
+Loaded UNIT: HD6
+Loaded UNIT: HD7
+Loaded UNIT: HD8
+Loaded UNIT: HD9
+Loaded UNIT: HDA
+Loaded UNIT: HDD
+Loaded UNIT: HE1
+Loaded UNIT: HE2
+Loaded UNIT: HE3
+Loaded UNIT: HE4
+Loaded UNIT: HE5
+Loaded UNIT: HE6
+Loaded UNIT: OH1
+Loaded UNIT: WT1
+Loaded UNIT: WT2
+Loaded UNIT: WT3
+Loaded UNIT: Z10
+Loaded UNIT: Z11
+Loaded UNIT: Z12
+Loaded UNIT: ZN1
+Loaded UNIT: ZN2
+Loaded UNIT: ZN3
+Loaded UNIT: ZN4
+Loaded UNIT: ZN5
+Loaded UNIT: ZN6
+Loaded UNIT: ZN7
+Loaded UNIT: ZN8
+Loaded UNIT: ZN9
+> loadamberparams ZAFF.frcmod #Load ZAFF frcmod file
+Loading parameters: ./ZAFF.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+ZAFF parameter set created by MTK++/MCPB 
+(UNKNOWN ATOM TYPE: S1)
+(UNKNOWN ATOM TYPE: S2)
+(UNKNOWN ATOM TYPE: N1)
+(UNKNOWN ATOM TYPE: S4)
+(UNKNOWN ATOM TYPE: S5)
+(UNKNOWN ATOM TYPE: N4)
+(UNKNOWN ATOM TYPE: N5)
+(UNKNOWN ATOM TYPE: N6)
+(UNKNOWN ATOM TYPE: N7)
+(UNKNOWN ATOM TYPE: O1)
+(UNKNOWN ATOM TYPE: N8)
+(UNKNOWN ATOM TYPE: N9)
+(UNKNOWN ATOM TYPE: N0)
+(UNKNOWN ATOM TYPE: O3)
+(UNKNOWN ATOM TYPE: O4)
+(UNKNOWN ATOM TYPE: E1)
+(UNKNOWN ATOM TYPE: D1)
+(UNKNOWN ATOM TYPE: E2)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: NR)
+> 
+> mol = loadpdb complex_DDB1_noH.pdb 
+Loading PDB file: ./complex_DDB1_noH.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue ASN, term: Terminal/beginning, seq. number: 0 to: NASN.
+Mapped residue LEU, term: Terminal/last, seq. number: 171 to: CLEU.
+Mapped residue THR, term: Terminal/beginning, seq. number: 173 to: NTHR.
+Mapped residue THR, term: Terminal/last, seq. number: 279 to: CTHR.
+Mapped residue MET, term: Terminal/beginning, seq. number: 280 to: NMET.
+Mapped residue HIE, term: Terminal/last, seq. number: 1106 to: CHIE.
+  total atoms in file: 8743
+  Leap added 8738 missing atoms according to residue templates:
+       8738 H / lone pairs
+> 
+> savepdb mol debug.pdb
+Writing pdb file: debug.pdb
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NASN -> ASN
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NTHR -> THR
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CTHR -> THR
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NMET -> MET
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CHIE -> HIE
+> 
+> bond mol.173.ZN mol.56.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.59.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.133.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.135.SG #Bond zinc ion with SG atom of residue CYM
+> 
+> solvateOct mol TIP3PBOX 20.0 # Solvate system
+Scaling up box by a factor of 1.256386 to meet diagonal cut criterion
+  Solute vdw bounding box:              76.913 115.031 107.468
+  Total bounding box for atom centers:  165.286 165.286 165.286
+      (box expansion for 'iso' is  36.2%)
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x= 9  y= 9  z= 9
+  Volume: 2298990.734 A^3 (oct)
+  Total mass 1285717.988 amu,  Density 0.929 g/cc
+  Added 64459 residues.
+> 
+> addions mol NA 0
+23 NA ions required to neutralize.
+Adding 23 counter ions to "mol" using 1A grid
+Total solute charge:  -23.00  Max atom radius:   2.00
+Grid extends from solute vdw + 4.25  to  10.25
+Box:
+   enclosing:  -51.47 -70.77 -57.31   60.37 55.38 61.20
+   sized:			      76.53 57.23 70.69
+   edge:        128.00
+Resolution:      1.00 Angstrom.
+Tree depth: 7
+Volume =  8.91% of box, grid points 186846
+Solvent present: replacing closest with ion
+	 when steric overlaps occur
+Calculating grid charges
+(Replacing solvent molecule)
+Placed NA in mol at (10.47, -30.74, -24.99).
+(Replacing solvent molecule)
+Placed NA in mol at (5.20, -26.93, 14.42).
+(Replacing solvent molecule)
+Placed NA in mol at (20.86, 16.34, -33.31).
+(Replacing solvent molecule)
+Placed NA in mol at (24.50, 7.63, 14.90).
+(Replacing solvent molecule)
+Placed NA in mol at (-6.37, 21.54, 1.28).
+(Replacing solvent molecule)
+Placed NA in mol at (-10.24, -35.11, 8.94).
+(Replacing solvent molecule)
+Placed NA in mol at (-27.68, 7.48, 0.40).
+(Replacing solvent molecule)
+Placed NA in mol at (5.84, 17.86, -6.74).
+(Replacing solvent molecule)
+Placed NA in mol at (10.24, -7.61, -43.03).
+(Replacing solvent molecule)
+Placed NA in mol at (-4.56, -61.16, -9.47).
+(Replacing solvent molecule)
+Placed NA in mol at (44.89, 23.36, -31.41).
+(Replacing solvent molecule)
+Placed NA in mol at (-28.08, -9.32, 20.96).
+(Replacing solvent molecule)
+Placed NA in mol at (-9.74, -2.66, -31.87).
+(Replacing solvent molecule)
+Placed NA in mol at (-5.22, 22.58, 18.65).
+(Replacing solvent molecule)
+Placed NA in mol at (30.28, -21.76, -36.77).
+(Replacing solvent molecule)
+Placed NA in mol at (-20.61, -25.22, -33.69).
+(Replacing solvent molecule)
+Placed NA in mol at (-13.42, 15.22, -23.48).
+(Replacing solvent molecule)
+Placed NA in mol at (-18.23, -38.69, -12.94).
+(Replacing solvent molecule)
+Placed NA in mol at (30.41, -7.13, -40.49).
+(Replacing solvent molecule)
+Placed NA in mol at (-3.07, -35.31, 14.87).
+(Replacing solvent molecule)
+Placed NA in mol at (50.43, 15.12, -20.83).
+(Replacing solvent molecule)
+Placed NA in mol at (-26.35, 32.20, 11.30).
+(Replacing solvent molecule)
+Placed NA in mol at (14.82, -59.08, -17.89).
+
+Done adding ions.
+> 
+> savepdb mol complex_DDB1_solvated.pdb #Save the pdb file
+Writing pdb file: complex_DDB1_solvated.pdb
+   printing CRYST1 record to PDB file with box info
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NASN -> ASN
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NTHR -> THR
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CTHR -> THR
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NMET -> MET
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CHIE -> HIE
+> saveamberparm mol complex_DDB1.prmtop complex_DDB1.inpcrd #Save the topology and coordinate files
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <CY1 56>:  -M   CA   N    HN  
+ <CY1 56>:  CA   +M   C    O   
+ <CY1 59>:  -M   CA   N    HN  
+ <CY1 59>:  CA   +M   C    O   
+ <CY1 133>:  -M   CA   N    HN  
+ <CY1 133>:  CA   +M   C    O   
+ <CY1 135>:  -M   CA   N    HN  
+ <CY1 135>:  CA   +M   C    O   
+ total 3439 improper torsions applied
+ 8 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CHIE	1
+	CLEU	1
+	CTHR	1
+	NASN	1
+	NMET	1
+	NTHR	1
+	WAT	64436
+  )
+ (no restraints)
+ quit #Quit tleap
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 12; Notes = 0.
+log started: Tue Aug 26 18:56:17 2025
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff19SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "XC"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> set default cmap on
+>> parm19 = loadamberparams parm19.dat
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/parm19.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA + ff19SB
+(UNKNOWN ATOM TYPE: Zn)
+(UNKNOWN ATOM TYPE: EP)
+>> frcmod19SB = loadamberparams frcmod.ff19SB
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ff19SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff19SB AA-specific backbone CMAPs for protein 07/25/2019
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino19.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/amino19.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+> source leaprc.water.tip3p
+----- Source: /home/btan/miniconda3/envs/openbiosim/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /home/btan/miniconda3/envs/openbiosim/dat/leap/cmd/leaprc.water.tip3p done
+>> #
+>> #       Load water and ions for TIP3P + Li/Merz monovalent ions 
+>> #       + Joung-Chetham monovalent ions
+>> #       + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #
+>> #       Note: the Li/Merz monovalent set is loaded only to get Tl+,
+>> #          Cu+, Ag+ NH4+, H3O+.  Since we load Joung-Cheatham second,
+>> #          the alkali halide parameters come from the Joung-Cheatham set
+>> #
+>> addAtomTypes {
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "NH4+"  "N"  "sp3" }
+>>     { "H3O+"  "O"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> loadAmberParams frcmod.tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+>> loadAmberParams frcmod.ions1lm_126_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+>> loadAmberParams frcmod.ionsjc_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+>> 
+> 
+> addAtomTypes { { "ZN" "Zn" "sp3" } { "S3" "S" "sp3" } } # Add atom types for the ZAFF metal center
+> loadamberparams frcmod.ions1lm_126_tip3p #Load the Li/Merz 12-6 parameter set for monovalent ions
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+> loadamberprep ZAFF.prep #Load ZAFF prep file
+Loading Prep file: ./ZAFF.prep
+(UNKNOWN ATOM TYPE: S1)
+(UNKNOWN ATOM TYPE: S2)
+(UNKNOWN ATOM TYPE: N1)
+(UNKNOWN ATOM TYPE: S4)
+(UNKNOWN ATOM TYPE: S5)
+(UNKNOWN ATOM TYPE: N4)
+(UNKNOWN ATOM TYPE: D1)
+(UNKNOWN ATOM TYPE: E1)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: E2)
+(UNKNOWN ATOM TYPE: NR)
+(UNKNOWN ATOM TYPE: N5)
+(UNKNOWN ATOM TYPE: N6)
+(UNKNOWN ATOM TYPE: N7)
+(UNKNOWN ATOM TYPE: O1)
+(UNKNOWN ATOM TYPE: N8)
+(UNKNOWN ATOM TYPE: N9)
+(UNKNOWN ATOM TYPE: N0)
+(UNKNOWN ATOM TYPE: O3)
+(UNKNOWN ATOM TYPE: O4)
+Loaded UNIT: AP1
+Loaded UNIT: AP2
+Loaded UNIT: CY1
+Loaded UNIT: CY2
+Loaded UNIT: CY3
+Loaded UNIT: CY4
+Loaded UNIT: CY5
+Loaded UNIT: HD1
+Loaded UNIT: HD2
+Loaded UNIT: HD3
+Loaded UNIT: HD4
+Loaded UNIT: HD5
+Loaded UNIT: HD6
+Loaded UNIT: HD7
+Loaded UNIT: HD8
+Loaded UNIT: HD9
+Loaded UNIT: HDA
+Loaded UNIT: HDD
+Loaded UNIT: HE1
+Loaded UNIT: HE2
+Loaded UNIT: HE3
+Loaded UNIT: HE4
+Loaded UNIT: HE5
+Loaded UNIT: HE6
+Loaded UNIT: OH1
+Loaded UNIT: WT1
+Loaded UNIT: WT2
+Loaded UNIT: WT3
+Loaded UNIT: Z10
+Loaded UNIT: Z11
+Loaded UNIT: Z12
+Loaded UNIT: ZN1
+Loaded UNIT: ZN2
+Loaded UNIT: ZN3
+Loaded UNIT: ZN4
+Loaded UNIT: ZN5
+Loaded UNIT: ZN6
+Loaded UNIT: ZN7
+Loaded UNIT: ZN8
+Loaded UNIT: ZN9
+> loadamberparams ZAFF.frcmod #Load ZAFF frcmod file
+Loading parameters: ./ZAFF.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+ZAFF parameter set created by MTK++/MCPB 
+(UNKNOWN ATOM TYPE: S1)
+(UNKNOWN ATOM TYPE: S2)
+(UNKNOWN ATOM TYPE: N1)
+(UNKNOWN ATOM TYPE: S4)
+(UNKNOWN ATOM TYPE: S5)
+(UNKNOWN ATOM TYPE: N4)
+(UNKNOWN ATOM TYPE: N5)
+(UNKNOWN ATOM TYPE: N6)
+(UNKNOWN ATOM TYPE: N7)
+(UNKNOWN ATOM TYPE: O1)
+(UNKNOWN ATOM TYPE: N8)
+(UNKNOWN ATOM TYPE: N9)
+(UNKNOWN ATOM TYPE: N0)
+(UNKNOWN ATOM TYPE: O3)
+(UNKNOWN ATOM TYPE: O4)
+(UNKNOWN ATOM TYPE: E1)
+(UNKNOWN ATOM TYPE: D1)
+(UNKNOWN ATOM TYPE: E2)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: NR)
+> 
+> mol = loadpdb complex_DDB1_noH.pdb 
+Loading PDB file: ./complex_DDB1_noH.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue ASN, term: Terminal/beginning, seq. number: 0 to: NASN.
+Mapped residue LEU, term: Terminal/last, seq. number: 171 to: CLEU.
+Mapped residue SER, term: Terminal/beginning, seq. number: 173 to: NSER.
+Mapped residue ASP, term: Terminal/last, seq. number: 281 to: CASP.
+Mapped residue MET, term: Terminal/beginning, seq. number: 282 to: NMET.
+Mapped residue HIE, term: Terminal/last, seq. number: 1108 to: CHIE.
+  total atoms in file: 8729
+  Leap added 8702 missing atoms according to residue templates:
+       8702 H / lone pairs
+> 
+> savepdb mol debug.pdb
+Writing pdb file: debug.pdb
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NASN -> ASN
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NSER -> SER
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CASP -> ASP
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NMET -> MET
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CHIE -> HIE
+> 
+> bond mol.173.ZN mol.56.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.59.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.133.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.135.SG #Bond zinc ion with SG atom of residue CYM
+> 
+> solvateOct mol TIP3PBOX 20.0 # Solvate system
+Scaling up box by a factor of 1.331192 to meet diagonal cut criterion
+  Solute vdw bounding box:              83.511 132.863 89.112
+  Total bounding box for atom centers:  186.111 186.111 186.111
+      (box expansion for 'iso' is  77.9%)
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x=10  y=10  z=10
+  Volume: 3275417.862 A^3 (oct)
+  Total mass 1850027.058 amu,  Density 0.938 g/cc
+  Added 95787 residues.
+> 
+> addions mol NA 0
+25 NA ions required to neutralize.
+Adding 25 counter ions to "mol" using 1A grid
+Total solute charge:  -25.00  Max atom radius:   2.00
+Grid extends from solute vdw + 4.37  to  10.37
+Box:
+   enclosing:  -45.04 -62.81 -70.06   68.58 49.15 66.29
+   sized:			      210.96 193.19 185.94
+   edge:        256.00
+Resolution:      1.00 Angstrom.
+Tree depth: 8
+Volume =  1.12% of box, grid points 188287
+Solvent present: replacing closest with ion
+	 when steric overlaps occur
+Calculating grid charges
+(Replacing solvent molecule)
+Placed NA in mol at (11.54, -13.01, 13.63).
+(Replacing solvent molecule)
+Placed NA in mol at (17.63, -39.77, -14.67).
+(Replacing solvent molecule)
+Placed NA in mol at (12.76, 13.00, -30.46).
+(Replacing solvent molecule)
+Placed NA in mol at (29.23, -4.15, -54.48).
+(Replacing solvent molecule)
+Placed NA in mol at (28.88, 13.89, -4.12).
+(Replacing solvent molecule)
+Placed NA in mol at (-4.05, -24.44, 11.88).
+(Replacing solvent molecule)
+Placed NA in mol at (-22.28, 8.88, -20.71).
+(Replacing solvent molecule)
+Placed NA in mol at (-1.09, -19.29, -41.37).
+(Replacing solvent molecule)
+Placed NA in mol at (-2.46, 2.62, 34.31).
+(Replacing solvent molecule)
+Placed NA in mol at (38.19, -37.32, -32.63).
+(Replacing solvent molecule)
+Placed NA in mol at (0.33, -46.40, 5.81).
+(Replacing solvent molecule)
+Placed NA in mol at (1.91, 19.19, -28.52).
+(Replacing solvent molecule)
+Placed NA in mol at (20.37, -28.49, -44.77).
+(Replacing solvent molecule)
+Placed NA in mol at (52.23, 2.92, -52.43).
+(Replacing solvent molecule)
+Placed NA in mol at (-19.63, 2.20, 12.05).
+(Replacing solvent molecule)
+Placed NA in mol at (-14.93, -36.95, -28.99).
+(Replacing solvent molecule)
+Placed NA in mol at (-34.81, 40.69, 46.74).
+(Replacing solvent molecule)
+Placed NA in mol at (44.16, -23.07, -40.66).
+(Replacing solvent molecule)
+Placed NA in mol at (-6.57, 0.37, -43.66).
+(Replacing solvent molecule)
+Placed NA in mol at (45.27, 13.00, -3.91).
+(Replacing solvent molecule)
+Placed NA in mol at (-9.96, -36.85, -2.30).
+(Replacing solvent molecule)
+Placed NA in mol at (18.79, -56.87, 3.35).
+(Replacing solvent molecule)
+Placed NA in mol at (61.92, 1.33, -38.66).
+(Replacing solvent molecule)
+Placed NA in mol at (31.80, 20.11, -32.64).
+(Replacing solvent molecule)
+Placed NA in mol at (8.43, -17.02, 15.84).
+
+Done adding ions.
+> 
+> savepdb mol complex_DDB1_solvated.pdb #Save the pdb file
+Writing pdb file: complex_DDB1_solvated.pdb
+   printing CRYST1 record to PDB file with box info
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NASN -> ASN
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NSER -> SER
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CASP -> ASP
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NMET -> MET
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CHIE -> HIE
+> saveamberparm mol complex_DDB1.prmtop complex_DDB1.inpcrd #Save the topology and coordinate files
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <CY1 56>:  -M   CA   N    HN  
+ <CY1 56>:  CA   +M   C    O   
+ <CY1 59>:  -M   CA   N    HN  
+ <CY1 59>:  CA   +M   C    O   
+ <CY1 133>:  -M   CA   N    HN  
+ <CY1 133>:  CA   +M   C    O   
+ <CY1 135>:  -M   CA   N    HN  
+ <CY1 135>:  CA   +M   C    O   
+ total 3431 improper torsions applied
+ 8 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CASP	1
+	CHIE	1
+	CLEU	1
+	NASN	1
+	NMET	1
+	NSER	1
+	WAT	95762
+  )
+ (no restraints)
+> quit #Quit tleap
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 12; Notes = 0.
+log started: Tue Sep 23 19:16:23 2025
+
+Log file: ./leap.log
+>> #
+>> # ----- leaprc for loading the ff19SB force field
+>> # ----- NOTE: this is designed for PDB format 3!
+>> #
+>> #	load atom type hybridizations
+>> #
+>> addAtomTypes {
+>> 	{ "H"   "H" "sp3" }
+>> 	{ "HO"  "H" "sp3" }
+>> 	{ "HS"  "H" "sp3" }
+>> 	{ "H1"  "H" "sp3" }
+>> 	{ "H2"  "H" "sp3" }
+>> 	{ "H3"  "H" "sp3" }
+>> 	{ "H4"  "H" "sp3" }
+>> 	{ "H5"  "H" "sp3" }
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "HC"  "H" "sp3" }
+>> 	{ "HA"  "H" "sp3" }
+>> 	{ "HP"  "H" "sp3" }
+>> 	{ "HZ"  "H" "sp3" }
+>> 	{ "OH"  "O" "sp3" }
+>> 	{ "OS"  "O" "sp3" }
+>> 	{ "O"   "O" "sp2" }
+>> 	{ "O2"  "O" "sp2" }
+>> 	{ "OP"  "O" "sp2" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "CT"  "C" "sp3" }
+>> 	{ "CX"  "C" "sp3" }
+>> 	{ "XC"  "C" "sp3" }
+>> 	{ "C8"  "C" "sp3" }
+>> 	{ "2C"  "C" "sp3" }
+>> 	{ "3C"  "C" "sp3" }
+>> 	{ "CH"  "C" "sp3" }
+>> 	{ "CS"  "C" "sp2" }
+>> 	{ "C"   "C" "sp2" }
+>> 	{ "CO"   "C" "sp2" }
+>> 	{ "C*"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CB"  "C" "sp2" }
+>> 	{ "CC"  "C" "sp2" }
+>> 	{ "CN"  "C" "sp2" }
+>> 	{ "CM"  "C" "sp2" }
+>> 	{ "CK"  "C" "sp2" }
+>> 	{ "CQ"  "C" "sp2" }
+>> 	{ "CD"  "C" "sp2" }
+>> 	{ "C5"  "C" "sp2" }
+>> 	{ "C4"  "C" "sp2" }
+>> 	{ "CP"  "C" "sp2" }
+>> 	{ "CI"  "C" "sp3" }
+>> 	{ "CJ"  "C" "sp2" }
+>> 	{ "CW"  "C" "sp2" }
+>> 	{ "CV"  "C" "sp2" }
+>> 	{ "CR"  "C" "sp2" }
+>> 	{ "CA"  "C" "sp2" }
+>> 	{ "CY"  "C" "sp2" }
+>> 	{ "C0"  "Ca" "sp3" }
+>> 	{ "MG"  "Mg" "sp3" }
+>> 	{ "N"   "N" "sp2" }
+>> 	{ "NA"  "N" "sp2" }
+>> 	{ "N2"  "N" "sp2" }
+>> 	{ "N*"  "N" "sp2" }
+>> 	{ "NP"  "N" "sp2" }
+>> 	{ "NQ"  "N" "sp2" }
+>> 	{ "NB"  "N" "sp2" }
+>> 	{ "NC"  "N" "sp2" }
+>> 	{ "NT"  "N" "sp3" }
+>> 	{ "NY"  "N" "sp2" }
+>> 	{ "N3"  "N" "sp3" }
+>> 	{ "S"   "S" "sp3" }
+>> 	{ "SH"  "S" "sp3" }
+>> 	{ "P"   "P" "sp3" }
+>> 	{ "LP"  ""  "sp3" }
+>> 	{ "EP"  ""  "sp3" }
+>> 	{ "F"   "F" "sp3" }
+>> 	{ "Cl"  "Cl" "sp3" }
+>> 	{ "Br"  "Br" "sp3" }
+>> 	{ "I"   "I"  "sp3" }
+>> }
+>> #
+>> #	Load the main parameter set.
+>> #
+>> set default cmap on
+>> parm19 = loadamberparams parm19.dat
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/parm19.dat
+Reading title:
+PARM99 + frcmod.ff99SB + frcmod.parmbsc0 + OL3 for RNA + ff19SB
+(UNKNOWN ATOM TYPE: Zn)
+(UNKNOWN ATOM TYPE: EP)
+>> frcmod19SB = loadamberparams frcmod.ff19SB
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ff19SB
+Reading force field modification type file (frcmod)
+Reading title:
+ff19SB AA-specific backbone CMAPs for protein 07/25/2019
+>> #
+>> #	Load main chain and terminating amino acid libraries
+>> #
+>> loadOff amino19.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/amino19.lib
+Loading: ALA
+Loading: ARG
+Loading: ASH
+Loading: ASN
+Loading: ASP
+Loading: CYM
+Loading: CYS
+Loading: CYX
+Loading: GLH
+Loading: GLN
+Loading: GLU
+Loading: GLY
+Loading: HID
+Loading: HIE
+Loading: HIP
+Loading: HYP
+Loading: ILE
+Loading: LEU
+Loading: LYN
+Loading: LYS
+Loading: MET
+Loading: PHE
+Loading: PRO
+Loading: SER
+Loading: THR
+Loading: TRP
+Loading: TYR
+Loading: VAL
+>> loadOff aminoct12.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/aminoct12.lib
+Loading: CALA
+Loading: CARG
+Loading: CASN
+Loading: CASP
+Loading: CCYS
+Loading: CCYX
+Loading: CGLN
+Loading: CGLU
+Loading: CGLY
+Loading: CHID
+Loading: CHIE
+Loading: CHIP
+Loading: CHYP
+Loading: CILE
+Loading: CLEU
+Loading: CLYS
+Loading: CMET
+Loading: CPHE
+Loading: CPRO
+Loading: CSER
+Loading: CTHR
+Loading: CTRP
+Loading: CTYR
+Loading: CVAL
+Loading: NHE
+Loading: NME
+>> loadOff aminont12.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/aminont12.lib
+Loading: ACE
+Loading: NALA
+Loading: NARG
+Loading: NASN
+Loading: NASP
+Loading: NCYS
+Loading: NCYX
+Loading: NGLN
+Loading: NGLU
+Loading: NGLY
+Loading: NHID
+Loading: NHIE
+Loading: NHIP
+Loading: NILE
+Loading: NLEU
+Loading: NLYS
+Loading: NMET
+Loading: NPHE
+Loading: NPRO
+Loading: NSER
+Loading: NTHR
+Loading: NTRP
+Loading: NTYR
+Loading: NVAL
+>> 
+>> #
+>> #	Define the PDB name map for the amino acids
+>> #
+>> addPdbResMap {
+>>   { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>   { 0 "ALA" "NALA" } { 1 "ALA" "CALA" }
+>>   { 0 "ARG" "NARG" } { 1 "ARG" "CARG" }
+>>   { 0 "ASN" "NASN" } { 1 "ASN" "CASN" }
+>>   { 0 "ASP" "NASP" } { 1 "ASP" "CASP" }
+>>   { 0 "CYS" "NCYS" } { 1 "CYS" "CCYS" }
+>>   { 0 "CYX" "NCYX" } { 1 "CYX" "CCYX" }
+>>   { 0 "GLN" "NGLN" } { 1 "GLN" "CGLN" }
+>>   { 0 "GLU" "NGLU" } { 1 "GLU" "CGLU" }
+>>   { 0 "GLY" "NGLY" } { 1 "GLY" "CGLY" }
+>>   { 0 "HID" "NHID" } { 1 "HID" "CHID" }
+>>   { 0 "HIE" "NHIE" } { 1 "HIE" "CHIE" }
+>>   { 0 "HIP" "NHIP" } { 1 "HIP" "CHIP" }
+>>   { 0 "ILE" "NILE" } { 1 "ILE" "CILE" }
+>>   { 0 "LEU" "NLEU" } { 1 "LEU" "CLEU" }
+>>   { 0 "LYS" "NLYS" } { 1 "LYS" "CLYS" }
+>>   { 0 "MET" "NMET" } { 1 "MET" "CMET" }
+>>   { 0 "PHE" "NPHE" } { 1 "PHE" "CPHE" }
+>>   { 0 "PRO" "NPRO" } { 1 "PRO" "CPRO" }
+>>   { 0 "SER" "NSER" } { 1 "SER" "CSER" }
+>>   { 0 "THR" "NTHR" } { 1 "THR" "CTHR" }
+>>   { 0 "TRP" "NTRP" } { 1 "TRP" "CTRP" }
+>>   { 0 "TYR" "NTYR" } { 1 "TYR" "CTYR" }
+>>   { 0 "VAL" "NVAL" } { 1 "VAL" "CVAL" }
+>>   { 0 "HIS" "NHIS" } { 1 "HIS" "CHIS" }
+>> }
+>> 
+>> #
+>> # assume that most often proteins use HIE
+>> #
+>> NHIS = NHIE
+>> HIS = HIE
+>> CHIS = CHIE
+> 
+> source leaprc.water.tip3p
+----- Source: /home/btan/miniconda3/envs/openbiosim/dat/leap/cmd/leaprc.water.tip3p
+----- Source of /home/btan/miniconda3/envs/openbiosim/dat/leap/cmd/leaprc.water.tip3p done
+>> #
+>> #       Load water and ions for TIP3P + Li/Merz monovalent ions 
+>> #       + Joung-Chetham monovalent ions
+>> #       + Li/Merz highly charged ions (+2 to +4, 12-6 normal usage set)
+>> #
+>> #       Note: the Li/Merz monovalent set is loaded only to get Tl+,
+>> #          Cu+, Ag+ NH4+, H3O+.  Since we load Joung-Cheatham second,
+>> #          the alkali halide parameters come from the Joung-Cheatham set
+>> #
+>> addAtomTypes {
+>> 	{ "HW"  "H" "sp3" }
+>> 	{ "OW"  "O" "sp3" }
+>> 	{ "F-"   "F" "sp3" }
+>> 	{ "Cl-"  "Cl" "sp3" }
+>> 	{ "Br-"  "Br" "sp3" }
+>> 	{ "I-"   "I"  "sp3" }
+>> 	{ "Li+"  "Li"  "sp3" }
+>> 	{ "Na+"  "Na"  "sp3" }
+>> 	{ "K+"  "K"  "sp3" }
+>> 	{ "Rb+"  "Rb"  "sp3" }
+>> 	{ "Cs+"  "Cs"  "sp3" }
+>> 	{ "Mg+"  "Mg"  "sp3" }
+>>     { "Tl+"  "Tl"  "sp3" }
+>>     { "Cu+"  "Cu"  "sp3" }
+>>     { "Ag+"  "Ag"  "sp3" }
+>>     { "NH4+"  "N"  "sp3" }
+>>     { "H3O+"  "O"  "sp3" }
+>>     { "Be2+" "Be"  "sp3" }
+>>     { "Cu2+" "Cu"  "sp3" }
+>>     { "Ni2+" "Ni"  "sp3" }
+>>     { "Pt2+" "Pt"  "sp3" }
+>>     { "Zn2+" "Zn"  "sp3" }
+>>     { "Co2+" "Co"  "sp3" }
+>>     { "Pd2+" "Pd"  "sp3" }
+>>     { "Ag2+" "Ag"  "sp3" }
+>>     { "Cr2+" "Cr"  "sp3" }
+>>     { "Fe2+" "Fe"  "sp3" }
+>>     { "Mg2+" "Mg"  "sp3" }
+>>     { "V2+"  "V"   "sp3" }
+>>     { "Mn2+" "Mn"  "sp3" }
+>>     { "Hg2+" "Hg"  "sp3" }
+>>     { "Cd2+" "Cd"  "sp3" }
+>>     { "Yb2+" "Yb"  "sp3" }
+>>     { "Ca2+" "Ca"  "sp3" }
+>>     { "Sn2+" "Sn"  "sp3" }
+>>     { "Pb2+" "Pb"  "sp3" }
+>>     { "Eu2+" "Eu"  "sp3" }
+>>     { "Sr2+" "Sr"  "sp3" }
+>>     { "Sm2+" "Sm"  "sp3" }
+>>     { "Ba2+" "Ba"  "sp3" }
+>>     { "Ra2+" "Ra"  "sp3" }
+>>     { "Al3+" "Al"  "sp3" }
+>>     { "Fe3+" "Fe"  "sp3" }
+>>     { "Cr3+" "Cr"  "sp3" }
+>>     { "In3+" "In"  "sp3" }
+>>     { "Tl3+" "Tl"  "sp3" }
+>>     { "Y3+"  "Y"   "sp3" }
+>>     { "La3+" "La"  "sp3" }
+>>     { "Ce3+" "Ce"  "sp3" }
+>>     { "Pr3+" "Pr"  "sp3" }
+>>     { "Nd3+" "Nd"  "sp3" }
+>>     { "Sm3+" "Sm"  "sp3" }
+>>     { "Eu3+" "Eu"  "sp3" }
+>>     { "Gd3+" "Gd"  "sp3" }
+>>     { "Tb3+" "Tb"  "sp3" }
+>>     { "Dy3+" "Dy"  "sp3" }
+>>     { "Er3+" "Er"  "sp3" }
+>>     { "Tm3+" "Tm"  "sp3" }
+>>     { "Lu3+" "Lu"  "sp3" }
+>>     { "Hf4+" "Hf"  "sp3" }
+>>     { "Zr4+" "Zr"  "sp3" }
+>>     { "Ce4+" "Ce"  "sp3" }
+>>     { "U4+"  "U"   "sp3" }
+>>     { "Pu4+" "Pu"  "sp3" }
+>>     { "Th4+" "Th"  "sp3" }
+>> }
+>> loadOff atomic_ions.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> loadOff solvents.lib
+Loading library: /home/btan/miniconda3/envs/openbiosim/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: O3P
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPC3POLBOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3
+>> WAT = TP3
+>> loadAmberParams frcmod.tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP3P water
+>> loadAmberParams frcmod.ions1lm_126_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+>> loadAmberParams frcmod.ionsjc_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+>> loadAmberParams frcmod.ions234lm_126_tip3p
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions234lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of divalent to tetravalent ions for TIP3P water model (12-6 normal usage set)
+>> 
+> 
+> addAtomTypes { { "ZN" "Zn" "sp3" } { "S3" "S" "sp3" } } # Add atom types for the ZAFF metal center
+> loadamberparams frcmod.ions1lm_126_tip3p #Load the Li/Merz 12-6 parameter set for monovalent ions
+Loading parameters: /home/btan/miniconda3/envs/openbiosim/dat/leap/parm/frcmod.ions1lm_126_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Li/Merz ion parameters of monovalent ions for TIP3P water model (12-6 normal usage set)
+> loadamberprep ZAFF.prep #Load ZAFF prep file
+Loading Prep file: ./ZAFF.prep
+(UNKNOWN ATOM TYPE: S1)
+(UNKNOWN ATOM TYPE: S2)
+(UNKNOWN ATOM TYPE: N1)
+(UNKNOWN ATOM TYPE: S4)
+(UNKNOWN ATOM TYPE: S5)
+(UNKNOWN ATOM TYPE: N4)
+(UNKNOWN ATOM TYPE: D1)
+(UNKNOWN ATOM TYPE: E1)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: E2)
+(UNKNOWN ATOM TYPE: NR)
+(UNKNOWN ATOM TYPE: N5)
+(UNKNOWN ATOM TYPE: N6)
+(UNKNOWN ATOM TYPE: N7)
+(UNKNOWN ATOM TYPE: O1)
+(UNKNOWN ATOM TYPE: N8)
+(UNKNOWN ATOM TYPE: N9)
+(UNKNOWN ATOM TYPE: N0)
+(UNKNOWN ATOM TYPE: O3)
+(UNKNOWN ATOM TYPE: O4)
+Loaded UNIT: AP1
+Loaded UNIT: AP2
+Loaded UNIT: CY1
+Loaded UNIT: CY2
+Loaded UNIT: CY3
+Loaded UNIT: CY4
+Loaded UNIT: CY5
+Loaded UNIT: HD1
+Loaded UNIT: HD2
+Loaded UNIT: HD3
+Loaded UNIT: HD4
+Loaded UNIT: HD5
+Loaded UNIT: HD6
+Loaded UNIT: HD7
+Loaded UNIT: HD8
+Loaded UNIT: HD9
+Loaded UNIT: HDA
+Loaded UNIT: HDD
+Loaded UNIT: HE1
+Loaded UNIT: HE2
+Loaded UNIT: HE3
+Loaded UNIT: HE4
+Loaded UNIT: HE5
+Loaded UNIT: HE6
+Loaded UNIT: OH1
+Loaded UNIT: WT1
+Loaded UNIT: WT2
+Loaded UNIT: WT3
+Loaded UNIT: Z10
+Loaded UNIT: Z11
+Loaded UNIT: Z12
+Loaded UNIT: ZN1
+Loaded UNIT: ZN2
+Loaded UNIT: ZN3
+Loaded UNIT: ZN4
+Loaded UNIT: ZN5
+Loaded UNIT: ZN6
+Loaded UNIT: ZN7
+Loaded UNIT: ZN8
+Loaded UNIT: ZN9
+> loadamberparams ZAFF.frcmod #Load ZAFF frcmod file
+Loading parameters: ./ZAFF.frcmod
+Reading force field modification type file (frcmod)
+Reading title:
+ZAFF parameter set created by MTK++/MCPB 
+(UNKNOWN ATOM TYPE: S1)
+(UNKNOWN ATOM TYPE: S2)
+(UNKNOWN ATOM TYPE: N1)
+(UNKNOWN ATOM TYPE: S4)
+(UNKNOWN ATOM TYPE: S5)
+(UNKNOWN ATOM TYPE: N4)
+(UNKNOWN ATOM TYPE: N5)
+(UNKNOWN ATOM TYPE: N6)
+(UNKNOWN ATOM TYPE: N7)
+(UNKNOWN ATOM TYPE: O1)
+(UNKNOWN ATOM TYPE: N8)
+(UNKNOWN ATOM TYPE: N9)
+(UNKNOWN ATOM TYPE: N0)
+(UNKNOWN ATOM TYPE: O3)
+(UNKNOWN ATOM TYPE: O4)
+(UNKNOWN ATOM TYPE: E1)
+(UNKNOWN ATOM TYPE: D1)
+(UNKNOWN ATOM TYPE: E2)
+(UNKNOWN ATOM TYPE: D2)
+(UNKNOWN ATOM TYPE: NR)
+> 
+> mol = loadpdb complex_DDB1_noH.pdb 
+Loading PDB file: ./complex_DDB1_noH.pdb
+Matching PDB residue names to LEaP variables.
+Mapped residue ASN, term: Terminal/beginning, seq. number: 0 to: NASN.
+Mapped residue LEU, term: Terminal/last, seq. number: 171 to: CLEU.
+Mapped residue SER, term: Terminal/beginning, seq. number: 173 to: NSER.
+Mapped residue ASP, term: Terminal/last, seq. number: 281 to: CASP.
+Mapped residue MET, term: Terminal/beginning, seq. number: 282 to: NMET.
+Mapped residue HIE, term: Terminal/last, seq. number: 1108 to: CHIE.
+  total atoms in file: 8729
+  Leap added 8702 missing atoms according to residue templates:
+       8702 H / lone pairs
+> 
+> savepdb mol debug.pdb
+Writing pdb file: debug.pdb
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NASN -> ASN
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NSER -> SER
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CASP -> ASP
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NMET -> MET
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CHIE -> HIE
+> 
+> bond mol.173.ZN mol.56.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.59.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.133.SG #Bond zinc ion with SG atom of residue CYM
+> bond mol.173.ZN mol.135.SG #Bond zinc ion with SG atom of residue CYM
+> 
+> solvateOct mol TIP3PBOX 20.0 # Solvate system
+Scaling up box by a factor of 1.327407 to meet diagonal cut criterion
+  Solute vdw bounding box:              81.893 91.110 127.501
+  Total bounding box for atom centers:  180.597 180.597 180.597
+      (box expansion for 'iso' is  67.5%)
+  Solvent unit box:                     18.774 18.774 18.774
+The number of boxes:  x=10  y=10  z=10
+  Volume: 2994316.347 A^3 (oct)
+  Total mass 1681253.170 amu,  Density 0.932 g/cc
+  Added 86419 residues.
+> 
+> addions mol NA 0
+25 NA ions required to neutralize.
+Adding 25 counter ions to "mol" using 1A grid
+Total solute charge:  -25.00  Max atom radius:   2.00
+Grid extends from solute vdw + 4.37  to  10.37
+Box:
+   enclosing:  -56.48 -61.51 -52.65   68.99 81.80 54.25
+   sized:			      199.52 194.49 203.35
+   edge:        256.00
+Resolution:      1.00 Angstrom.
+Tree depth: 8
+Volume =  1.12% of box, grid points 187252
+Solvent present: replacing closest with ion
+	 when steric overlaps occur
+Calculating grid charges
+(Replacing solvent molecule)
+Placed NA in mol at (16.29, -9.36, 12.39).
+(Replacing solvent molecule)
+Placed NA in mol at (42.78, 16.75, -8.55).
+(Replacing solvent molecule)
+Placed NA in mol at (9.10, 57.16, -3.95).
+(Replacing solvent molecule)
+Placed NA in mol at (-2.10, 18.62, 27.17).
+(Replacing solvent molecule)
+Placed NA in mol at (-7.58, 34.91, -1.05).
+(Replacing solvent molecule)
+Placed NA in mol at (26.44, -10.00, -9.03).
+(Replacing solvent molecule)
+Placed NA in mol at (32.25, 43.36, -16.70).
+(Replacing solvent molecule)
+Placed NA in mol at (20.88, -14.70, 8.66).
+(Replacing solvent molecule)
+Placed NA in mol at (-15.03, 6.96, -27.61).
+(Replacing solvent molecule)
+Placed NA in mol at (13.66, 68.58, 17.76).
+(Replacing solvent molecule)
+Placed NA in mol at (-1.47, -30.27, 21.77).
+(Replacing solvent molecule)
+Placed NA in mol at (-3.61, 32.51, -27.59).
+(Replacing solvent molecule)
+Placed NA in mol at (-48.69, -46.93, 15.28).
+(Replacing solvent molecule)
+Placed NA in mol at (44.67, 41.22, 2.29).
+(Replacing solvent molecule)
+Placed NA in mol at (29.97, 14.01, -37.32).
+(Replacing solvent molecule)
+Placed NA in mol at (53.61, -15.21, -13.25).
+(Replacing solvent molecule)
+Placed NA in mol at (-10.69, -18.25, -10.53).
+(Replacing solvent molecule)
+Placed NA in mol at (15.90, 31.72, -29.55).
+(Replacing solvent molecule)
+Placed NA in mol at (-19.34, 26.84, -3.95).
+(Replacing solvent molecule)
+Placed NA in mol at (36.95, 51.49, 5.68).
+(Replacing solvent molecule)
+Placed NA in mol at (3.30, 23.83, 38.79).
+(Replacing solvent molecule)
+Placed NA in mol at (17.54, 61.63, 30.00).
+(Replacing solvent molecule)
+Placed NA in mol at (31.78, -6.09, -20.76).
+(Replacing solvent molecule)
+Placed NA in mol at (58.84, -3.29, -5.50).
+(Replacing solvent molecule)
+Placed NA in mol at (16.57, -10.85, 19.62).
+
+Done adding ions.
+> addions mol CL 0
+ 0.000010 0 1 0
+0 CL ion required to neutralize.
+Adding 0 counter ions to "mol" using 1A grid
+> 
+> savepdb mol complex_DDB1_solvated.pdb #Save the pdb file
+Writing pdb file: complex_DDB1_solvated.pdb
+   printing CRYST1 record to PDB file with box info
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NASN -> ASN
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CLEU -> LEU
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NSER -> SER
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CASP -> ASP
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting N-terminal residue name to PDB format: NMET -> MET
+
+/home/btan/miniconda3/envs/openbiosim/bin/teLeap: Warning!
+ Converting C-terminal residue name to PDB format: CHIE -> HIE
+> saveamberparm mol complex_DDB1.prmtop complex_DDB1.inpcrd #Save the topology and coordinate files
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+old PREP-specified impropers:
+ <CY1 56>:  -M   CA   N    HN  
+ <CY1 56>:  CA   +M   C    O   
+ <CY1 59>:  -M   CA   N    HN  
+ <CY1 59>:  CA   +M   C    O   
+ <CY1 133>:  -M   CA   N    HN  
+ <CY1 133>:  CA   +M   C    O   
+ <CY1 135>:  -M   CA   N    HN  
+ <CY1 135>:  CA   +M   C    O   
+ total 3431 improper torsions applied
+ 8 improper torsions in old prep form
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	CASP	1
+	CHIE	1
+	CLEU	1
+	NASN	1
+	NMET	1
+	NSER	1
+	WAT	86394
+  )
+ (no restraints)
+ quit #Quit tleap
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 12; Notes = 0.

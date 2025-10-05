@@ -1,0 +1,13 @@
+source leaprc.protein.ff19SB
+source leaprc.water.tip3p
+
+mol = loadpdb BD2_noH.pdb 
+
+solvateOct mol TIP3PBOX 15.0 # Solvate system
+
+addions mol CL 0
+addions mol NA 0
+
+savepdb mol BD2_solvated.pdb #Save the pdb file
+saveamberparm mol BD2.prmtop BD2.inpcrd #Save the topology and coordinate files
+quit #Quit tleap
