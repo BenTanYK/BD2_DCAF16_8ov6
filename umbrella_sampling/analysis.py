@@ -839,3 +839,48 @@ def SepContribution(x, pmf, r_star):
             break
 
     return -1/(beta)*math.log(3*I/radius_sphere)
+
+
+def analyse_RMSDContribution(x, pmf, k_rmsd, unbound=False):
+    """
+    Analyse the free energy contribution as a function of the RMSD CV.
+    This function returns the normalised numerator and denominator functions,
+    which are integrated to calculate the total free energy contribution.
+    """
+
+    restraintCenter = 0
+
+    # Convert x to np array if necessary
+    if not isinstance(x, np.ndarray):
+        x = np.array(x)
+
+    # Convert pmf to np array if necessary
+    if not isinstance(pmf, np.ndarray):
+        pmf = np.array(pmf)
+
+    numerator = np.exp(-beta * pmf)
+    denominator = np.exp((-beta) * (pmf + 0.5 * k_rmsd * (np.square(x - restraintCenter))))
+    
+    # Normalise for plotting purposes
+    return numerator/np.max(numerator), denominator/np.max(denominator)
+
+def analyse_BoreschContribution(x, pmf, theta_0, k_restraint):
+    """
+    Analyse the free energy contribution as a function of the Boresch DOF.
+    This function returns the normalised numerator and denominator functions,
+    which are integrated to calculate the total free energy contribution.
+    """
+    pmf = np.array([x,pmf])
+    
+    width = pmf[0][1] - pmf[0][0]
+
+    restraint_center = theta_0
+
+    x = pmf[0]
+    y = pmf[1]
+
+    numerator = width*np.exp(-beta*y)
+    denominator = width*np.exp((-beta)*(y+0.5*k_restraint*(np.square(x-restraint_center))))
+
+    # Normalise for plotting purposes
+    return numerator/np.max(numerator), denominator/np.max(denominator)
