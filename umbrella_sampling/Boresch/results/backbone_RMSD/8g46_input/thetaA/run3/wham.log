@@ -1,0 +1,23 @@
+# /home/btan/Software/WHAM/wham/wham/wham 1.1 2.1 100 1e-06 300 0 /home/btan/Documents/BD2_DCAF16_8ov6/umbrella_sampling/Boresch/results/backbone_RMSD/thetaA/run3//metafile.txt /home/btan/Documents/BD2_DCAF16_8ov6/umbrella_sampling/Boresch/results/backbone_RMSD/thetaA/run3//pmf.txt
+#Number of windows = 10
+#Iteration 10:  0.084698
+#Iteration 20:  0.018166
+#Iteration 30:  0.003677
+#Iteration 40:  0.000736
+#Iteration 50:  0.000147
+#Iteration 60:  0.000029
+#Iteration 70:  0.000006
+#Iteration 80:  0.000001
+# Dumping simulation biases, in the metadata file order 
+# Window  F (free energy units)
+# 0	0.000000
+# 1	-2.942442
+# 2	-5.054479
+# 3	-6.334748
+# 4	-6.783366
+# 5	-6.407606
+# 6	-3.327354
+# 7	-0.761447
+# 8	2.447688
+# 9	6.274826
+# No MC error analysis requested

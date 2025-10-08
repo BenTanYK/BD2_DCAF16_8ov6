@@ -5,7 +5,7 @@ dof = phiC # phiA, thetaB, phiA, phiB, phiC
 
 """MD parameters"""
 timestep = 4 # fs
-save_traj = False # True or False
+save_traj = True # True or False
 equilibration_time = 1 # ns
 sampling_time = 5 # ns
 n_steps_between_sampling = 125 
