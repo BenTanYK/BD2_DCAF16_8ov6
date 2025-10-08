@@ -31,7 +31,6 @@
 /home/btan/Documents/BD2_DCAF16_8ov6/umbrella_sampling/separation/results/backbone_RMSD/run1/RED/2.7.txt 2.7 1000
 /home/btan/Documents/BD2_DCAF16_8ov6/umbrella_sampling/separation/results/backbone_RMSD/run1/RED/2.8.txt 2.8 1000
 /home/btan/Documents/BD2_DCAF16_8ov6/umbrella_sampling/separation/results/backbone_RMSD/run1/RED/2.9.txt 2.9 1000
-/home/btan/Documents/BD2_DCAF16_8ov6/umbrella_sampling/separation/results/backbone_RMSD/run1/RED/3.0.txt 3.0 1000
 /home/btan/Documents/BD2_DCAF16_8ov6/umbrella_sampling/separation/results/backbone_RMSD/run1/RED/3.1.txt 3.1 1000
 /home/btan/Documents/BD2_DCAF16_8ov6/umbrella_sampling/separation/results/backbone_RMSD/run1/RED/3.2.txt 3.2 1000
 /home/btan/Documents/BD2_DCAF16_8ov6/umbrella_sampling/separation/results/backbone_RMSD/run1/RED/3.3.txt 3.3 1000
