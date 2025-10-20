@@ -1,0 +1,7 @@
+/home/btan/Documents/BD2_DCAF16_8ov6/umbrella_sampling/Boresch/results/backbone_RMSD/thetaA/run3//1.3.txt 1.3 100
+/home/btan/Documents/BD2_DCAF16_8ov6/umbrella_sampling/Boresch/results/backbone_RMSD/thetaA/run3//1.4.txt 1.4 100
+/home/btan/Documents/BD2_DCAF16_8ov6/umbrella_sampling/Boresch/results/backbone_RMSD/thetaA/run3//1.5.txt 1.5 100
+/home/btan/Documents/BD2_DCAF16_8ov6/umbrella_sampling/Boresch/results/backbone_RMSD/thetaA/run3//1.6.txt 1.6 100
+/home/btan/Documents/BD2_DCAF16_8ov6/umbrella_sampling/Boresch/results/backbone_RMSD/thetaA/run3//1.7.txt 1.7 100
+/home/btan/Documents/BD2_DCAF16_8ov6/umbrella_sampling/Boresch/results/backbone_RMSD/thetaA/run3//1.8.txt 1.8 100
+/home/btan/Documents/BD2_DCAF16_8ov6/umbrella_sampling/Boresch/results/backbone_RMSD/thetaA/run3//1.9.txt 1.9 100
